@@ -16,6 +16,7 @@ import javax.swing.SwingConstants;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.List;
 import java.awt.event.ActionEvent;
 import javax.swing.border.LineBorder;
 import javax.swing.event.ChangeEvent;
@@ -39,9 +40,13 @@ public class Main extends JFrame {
 	static boolean step2 = false;
 	static boolean step3 = false;
 	static JSlider slider = new JSlider();
+	static JPanel qty_panel = new JPanel();
+	static JLabel total_pricelbl = new JLabel("0");
+	JList<String> orderList = new JList<>(orderListModel);
 	
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
+	public static double totalPrice;
 
 	/**
 	 * Launch the application.
@@ -76,6 +81,7 @@ public class Main extends JFrame {
 		addon_panel.setVisible(false);
 		order_panel.setVisible(false);
 		size_panel.setVisible(false);
+		qty_panel.setVisible(false);
 	}
 	
 	public static void showPanel(JPanel panelActive) {
@@ -106,6 +112,7 @@ public class Main extends JFrame {
 		    addon_panel.setVisible(true);
 			order_panel.setVisible(true);
 			size_panel.setVisible(true);
+			qty_panel.setVisible(true);
 		});
 		coffee_btn.setForeground(new Color(0, 0, 0));
 		coffee_btn.setFont(new Font("Arial", Font.BOLD, 10));
@@ -121,6 +128,7 @@ public class Main extends JFrame {
 			addon_panel.setVisible(true);
 			order_panel.setVisible(true);
 			size_panel.setVisible(true);
+			qty_panel.setVisible(true);
 		});
 		milktea_btn.setForeground(Color.BLACK);
 		milktea_btn.setFont(new Font("Arial", Font.BOLD, 10));
@@ -136,6 +144,7 @@ public class Main extends JFrame {
 			addon_panel.setVisible(true);
 			order_panel.setVisible(true);
 			size_panel.setVisible(true);
+			qty_panel.setVisible(true);
 		});
 		fruittea_btn.setForeground(Color.BLACK);
 		fruittea_btn.setFont(new Font("Arial", Font.BOLD, 10));
@@ -151,6 +160,7 @@ public class Main extends JFrame {
 			addon_panel.setVisible(true);
 			order_panel.setVisible(true);
 			size_panel.setVisible(true);
+			qty_panel.setVisible(true);
 		});
 		frappe_btn.setForeground(Color.BLACK);
 		frappe_btn.setFont(new Font("Arial", Font.BOLD, 10));
@@ -165,20 +175,28 @@ public class Main extends JFrame {
 		inventory_btn.setFont(new Font("Arial", Font.BOLD, 10));
 		inventory_btn.setBorderPainted(false);
 		inventory_btn.setBackground(Color.LIGHT_GRAY);
-		inventory_btn.setBounds(10, 109, 131, 45);
+		inventory_btn.setBounds(10, 109, 188, 45);
 		contentPane.add(inventory_btn);
 		inventory_btn.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		inventory_btn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Inventory inventoryFrame = new Inventory();
+                inventoryFrame.setVisible(true);
+			}
+		});
 		
 		JButton sales_btn = new JButton("SALES");
 		sales_btn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				Sales salesFrame = new Sales();
+				salesFrame.setVisible(true);
 			}
 		});
 		sales_btn.setForeground(Color.BLACK);
 		sales_btn.setFont(new Font("Arial", Font.BOLD, 10));
 		sales_btn.setBorderPainted(false);
 		sales_btn.setBackground(Color.LIGHT_GRAY);
-		sales_btn.setBounds(151, 109, 146, 45);
+		sales_btn.setBounds(208, 109, 222, 45);
 		contentPane.add(sales_btn);
 		sales_btn.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		
@@ -435,6 +453,7 @@ public class Main extends JFrame {
 		fruit_panel.add(F_straw_btn);
 		F_straw_btn.addActionListener(e -> {
 		    Request.prodName = "strawberry fruit tea";
+		    Request.powder = "fruit strawberry powder";
 		    step1 = true;
 		});
 
@@ -447,6 +466,7 @@ public class Main extends JFrame {
 		fruit_panel.add(F_lychee_btn);
 		F_lychee_btn.addActionListener(e -> {
 		    Request.prodName = "lychee fruit tea";
+		    Request.powder = "fruit lychee powder";
 		    step1 = true;
 		});
 
@@ -459,6 +479,7 @@ public class Main extends JFrame {
 		fruit_panel.add(F_watermelon_btn);
 		F_watermelon_btn.addActionListener(e -> {
 		    Request.prodName = "watermelon fruit tea";
+		    Request.powder = "fruit wintermerlon powder";
 		    step1 = true;
 		});
 
@@ -471,6 +492,7 @@ public class Main extends JFrame {
 		fruit_panel.add(F_blue_btn);
 		F_blue_btn.addActionListener(e -> {
 		    Request.prodName = "blueberry fruit tea";
+		    Request.powder = "fruit blueberry powder";
 		    step1 = true;
 		});
 
@@ -483,6 +505,7 @@ public class Main extends JFrame {
 		fruit_panel.add(F_orange_btn);
 		F_orange_btn.addActionListener(e -> {
 		    Request.prodName = "orange fruit tea";
+		    Request.powder = "fruit orange powder";
 		    step1 = true;
 		});
 
@@ -495,6 +518,7 @@ public class Main extends JFrame {
 		fruit_panel.add(F_mango_btn);
 		F_mango_btn.addActionListener(e -> {
 		    Request.prodName = "mango fruit tea";
+		    Request.powder = "fruit mango powder";
 		    step1 = true;
 		});
 
@@ -507,6 +531,7 @@ public class Main extends JFrame {
 		fruit_panel.add(F_gapple_btn);
 		F_gapple_btn.addActionListener(e -> {
 		    Request.prodName = "green apple fruit tea";
+		    Request.powder = "fruit green apple powder";
 		    step1 = true;
 		});
 
@@ -519,6 +544,7 @@ public class Main extends JFrame {
 		fruit_panel.add(F_grape_btn);
 		F_grape_btn.addActionListener(e -> {
 		    Request.prodName = "grapes fruit tea";
+		    Request.powder = "fruit grapes powder";
 		    step1 = true;
 		});
 
@@ -531,6 +557,7 @@ public class Main extends JFrame {
 		fruit_panel.add(F_kiwi_btn);
 		F_kiwi_btn.addActionListener(e -> {
 		    Request.prodName = "kiwi fruit tea";
+		    Request.powder = "fruit kiwi powder";
 		    step1 = true;
 		});
 
@@ -543,6 +570,7 @@ public class Main extends JFrame {
 		fruit_panel.add(F_melon_btn);
 		F_melon_btn.addActionListener(e -> {
 		    Request.prodName = "melon fruit tea";
+		    Request.powder = "fruit melon powder";
 		    step1 = true;
 		});
 
@@ -570,7 +598,12 @@ public class Main extends JFrame {
 		FP_cjava_btn.setBackground(Color.LIGHT_GRAY);
 		FP_cjava_btn.setBounds(146, 82, 147, 37);
 		frappe_panel.add(FP_cjava_btn);
-		
+		FP_cjava_btn.addActionListener(e -> {
+		    Request.prodName = "choco java frappe";
+		    Request.powder = "frappe c choco java powder";
+		    step1 = true;
+		});
+
 		JButton FP_strawcream_btn = new JButton("STRAWBERRY CREAM");
 		FP_strawcream_btn.setForeground(Color.BLACK);
 		FP_strawcream_btn.setFont(new Font("Arial", Font.BOLD, 10));
@@ -578,7 +611,12 @@ public class Main extends JFrame {
 		FP_strawcream_btn.setBackground(Color.LIGHT_GRAY);
 		FP_strawcream_btn.setBounds(334, 82, 147, 37);
 		frappe_panel.add(FP_strawcream_btn);
-		
+		FP_strawcream_btn.addActionListener(e -> {
+		    Request.prodName = "strawberry cream frappe";
+		    Request.powder = "frappe nc strawberry cream powder";
+		    step1 = true;
+		});
+
 		JButton FP_ccake_btn = new JButton("CHEESECAKE CREAM");
 		FP_ccake_btn.setForeground(Color.BLACK);
 		FP_ccake_btn.setFont(new Font("Arial", Font.BOLD, 10));
@@ -586,7 +624,12 @@ public class Main extends JFrame {
 		FP_ccake_btn.setBackground(Color.LIGHT_GRAY);
 		FP_ccake_btn.setBounds(334, 125, 147, 37);
 		frappe_panel.add(FP_ccake_btn);
-		
+		FP_ccake_btn.addActionListener(e -> {
+		    Request.prodName = "cheesecake cream frappe";
+		    Request.powder = "frappe nc cheescake cream powder";
+		    step1 = true;
+		});
+
 		JButton FP_chazel_btn = new JButton("CHOCO HAZELNUT");
 		FP_chazel_btn.setForeground(Color.BLACK);
 		FP_chazel_btn.setFont(new Font("Arial", Font.BOLD, 10));
@@ -594,7 +637,12 @@ public class Main extends JFrame {
 		FP_chazel_btn.setBackground(Color.LIGHT_GRAY);
 		FP_chazel_btn.setBounds(146, 125, 147, 37);
 		frappe_panel.add(FP_chazel_btn);
-		
+		FP_chazel_btn.addActionListener(e -> {
+		    Request.prodName = "choco hazelnut frappe";
+		    Request.powder = "frappe c choco hazelnut powder";
+		    step1 = true;
+		});
+
 		JButton FP_chococream_btn = new JButton("CHOCOLATE CREAM");
 		FP_chococream_btn.setForeground(Color.BLACK);
 		FP_chococream_btn.setFont(new Font("Arial", Font.BOLD, 10));
@@ -602,7 +650,12 @@ public class Main extends JFrame {
 		FP_chococream_btn.setBackground(Color.LIGHT_GRAY);
 		FP_chococream_btn.setBounds(334, 167, 147, 37);
 		frappe_panel.add(FP_chococream_btn);
-		
+		FP_chococream_btn.addActionListener(e -> {
+		    Request.prodName = "chocolate cream frappe";
+		    Request.powder = "frappe nc chocolate cream powder";
+		    step1 = true;
+		});
+
 		JButton FP_vcream_btn = new JButton("VANILLA CARAMEL");
 		FP_vcream_btn.setForeground(Color.BLACK);
 		FP_vcream_btn.setFont(new Font("Arial", Font.BOLD, 10));
@@ -610,7 +663,12 @@ public class Main extends JFrame {
 		FP_vcream_btn.setBackground(Color.LIGHT_GRAY);
 		FP_vcream_btn.setBounds(146, 167, 147, 37);
 		frappe_panel.add(FP_vcream_btn);
-		
+		FP_vcream_btn.addActionListener(e -> {
+		    Request.prodName = "vanilla caramel frappe";
+		    Request.powder = "frappe c vanilla caramel powder";
+		    step1 = true;
+		});
+
 		JButton FP_scaramel_btn = new JButton("SALTED CARAMEL");
 		FP_scaramel_btn.setForeground(Color.BLACK);
 		FP_scaramel_btn.setFont(new Font("Arial", Font.BOLD, 10));
@@ -618,19 +676,25 @@ public class Main extends JFrame {
 		FP_scaramel_btn.setBackground(Color.LIGHT_GRAY);
 		FP_scaramel_btn.setBounds(146, 209, 147, 37);
 		frappe_panel.add(FP_scaramel_btn);
-		
-		JButton FP_cookiecream_btn = new JButton("COOKIES & CREAM");
-		FP_cookiecream_btn.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
+		FP_scaramel_btn.addActionListener(e -> {
+		    Request.prodName = "salted caramel frappe";
+		    Request.powder = "frappe c salted caramel powder";
+		    step1 = true;
 		});
+
+		JButton FP_cookiecream_btn = new JButton("COOKIES & CREAM");
 		FP_cookiecream_btn.setForeground(Color.BLACK);
 		FP_cookiecream_btn.setFont(new Font("Arial", Font.BOLD, 10));
 		FP_cookiecream_btn.setBorderPainted(false);
 		FP_cookiecream_btn.setBackground(Color.LIGHT_GRAY);
 		FP_cookiecream_btn.setBounds(334, 209, 147, 37);
 		frappe_panel.add(FP_cookiecream_btn);
-		
+		FP_cookiecream_btn.addActionListener(e -> {
+		    Request.prodName = "cookies & cream frappe";
+		    Request.powder = "frappe nc cookies n cream powder";
+		    step1 = true;
+		});
+
 		JButton FP_gtea_btn = new JButton("GREEN TEA CREAM");
 		FP_gtea_btn.setForeground(Color.BLACK);
 		FP_gtea_btn.setFont(new Font("Arial", Font.BOLD, 10));
@@ -638,7 +702,12 @@ public class Main extends JFrame {
 		FP_gtea_btn.setBackground(Color.LIGHT_GRAY);
 		FP_gtea_btn.setBounds(146, 251, 147, 37);
 		frappe_panel.add(FP_gtea_btn);
-		
+		FP_gtea_btn.addActionListener(e -> {
+		    Request.prodName = "green tea cream frappe";
+		    Request.powder = "frappe c green tea cream powder";
+		    step1 = true;
+		});
+
 		JButton FP_taro = new JButton("TARO");
 		FP_taro.setForeground(Color.BLACK);
 		FP_taro.setFont(new Font("Arial", Font.BOLD, 10));
@@ -646,6 +715,11 @@ public class Main extends JFrame {
 		FP_taro.setBackground(Color.LIGHT_GRAY);
 		FP_taro.setBounds(334, 251, 147, 37);
 		frappe_panel.add(FP_taro);
+		FP_taro.addActionListener(e -> {
+		    Request.prodName = "taro frappe";
+		    Request.powder = "frappe nc taro powder";
+		    step1 = true;
+		});
 		
 		JLabel lblNewLabel = new JLabel("COFFEE BASED");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
@@ -687,6 +761,12 @@ public class Main extends JFrame {
 		AD_oreo.setBackground(Color.LIGHT_GRAY);
 		AD_oreo.setBounds(184, 17, 71, 45);
 		addon_panel.add(AD_oreo);
+		AD_oreo.addActionListener(e -> {
+		    Request.addons = "oreo";
+		    step3 = true;
+		    Request.quantity = slider.getValue();
+		    Request.addItem();
+		});
 		
 		JButton AD_nata = new JButton("NATA");
 		AD_nata.setForeground(Color.BLACK);
@@ -695,6 +775,12 @@ public class Main extends JFrame {
 		AD_nata.setBackground(Color.LIGHT_GRAY);
 		AD_nata.setBounds(265, 17, 63, 45);
 		addon_panel.add(AD_nata);
+		AD_nata.addActionListener(e -> {
+		    Request.addons = "nata";
+		    step3 = true;
+		    Request.quantity = slider.getValue();
+		    Request.addItem();
+		});
 		
 		JButton AD_cjelly = new JButton("COFFEE JELLY");
 		AD_cjelly.setForeground(Color.BLACK);
@@ -703,6 +789,12 @@ public class Main extends JFrame {
 		AD_cjelly.setBackground(Color.LIGHT_GRAY);
 		AD_cjelly.setBounds(338, 17, 112, 45);
 		addon_panel.add(AD_cjelly);
+		AD_cjelly.addActionListener(e -> {
+		    Request.addons = "coffee jelly";
+		    step3 = true;
+		    Request.quantity = slider.getValue();
+		    Request.addItem();
+		});
 		
 		JButton AD_fjelly = new JButton("FRUIT JELLY");
 		AD_fjelly.setForeground(Color.BLACK);
@@ -711,6 +803,12 @@ public class Main extends JFrame {
 		AD_fjelly.setBackground(Color.LIGHT_GRAY);
 		AD_fjelly.setBounds(460, 17, 131, 45);
 		addon_panel.add(AD_fjelly);
+		AD_fjelly.addActionListener(e -> {
+		    Request.addons = "fruit jelly";
+		    step3 = true;
+		    Request.quantity = slider.getValue();
+		    Request.addItem();
+		});
 		
 		JButton AD_none = new JButton("NONE");
 		AD_none.setForeground(Color.BLACK);
@@ -719,6 +817,12 @@ public class Main extends JFrame {
 		AD_none.setBackground(Color.LIGHT_GRAY);
 		AD_none.setBounds(10, 17, 77, 45);
 		addon_panel.add(AD_none);
+		AD_none.addActionListener(e -> {
+		    Request.addons = "no addons";
+		    step3 = true;
+		    Request.quantity = slider.getValue();
+		    Request.addItem();
+		});
 		
 		order_panel.setBorder(new LineBorder(new Color(0, 0, 0)));
         order_panel.setBackground(new Color(255, 255, 255));
@@ -731,7 +835,7 @@ public class Main extends JFrame {
         orderlbl.setFont(new Font("Arial", Font.BOLD, 20));
         order_panel.add(orderlbl);
 
-        JList<String> orderList = new JList<>(orderListModel);
+        
         orderList.setBounds(10, 46, 396, 249);
         order_panel.add(orderList);
 
@@ -739,17 +843,18 @@ public class Main extends JFrame {
         scrollPane.setBounds(10, 46, 396, 249);
         order_panel.add(scrollPane);
 
-        orderList.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                if (e.getClickCount() == 2) {
-                    int selectedIndex = orderList.getSelectedIndex();
-                    if (selectedIndex != -1) {
-                        orderListModel.remove(selectedIndex);
-                    }
-                }
-            }
-        });
+//        orderList.addMouseListener(new MouseAdapter() {
+//            @Override
+//            public void mouseClicked(MouseEvent e) {
+//                if (e.getClickCount() == 2) {
+//                    int selectedIndex = orderList.getSelectedIndex();
+//                    if (selectedIndex != -1) {
+//                        orderListModel.remove(selectedIndex);
+//                        Request.orderList.remove(selectedIndex);
+//                    }
+//                }
+//            }
+//        });
 
 		
 		JButton checkout_btn = new JButton("CHECKOUT");
@@ -759,6 +864,15 @@ public class Main extends JFrame {
 		checkout_btn.setBackground(Color.LIGHT_GRAY);
 		checkout_btn.setBounds(303, 324, 89, 45);
 		order_panel.add(checkout_btn);
+		checkout_btn.addActionListener(e -> {
+			
+			Request.insertSalesData(orderListModel, totalPrice);
+
+			orderListModel.clear();
+			Request.updateDB();
+			Request.orderList.clear();
+			total_pricelbl.setText("0");
+		});
 		
 		JLabel lblTotal = new JLabel("TOTAL:");
 		lblTotal.setFont(new Font("Arial", Font.BOLD, 20));
@@ -773,13 +887,14 @@ public class Main extends JFrame {
 		clear_btn.setBounds(204, 324, 89, 45);
 		order_panel.add(clear_btn);
 		
-		JButton restock_btn = new JButton("RESTOCK");
-		restock_btn.setForeground(Color.BLACK);
-		restock_btn.setFont(new Font("Arial", Font.BOLD, 10));
-		restock_btn.setBorderPainted(false);
-		restock_btn.setBackground(Color.LIGHT_GRAY);
-		restock_btn.setBounds(307, 109, 120, 45);
-		contentPane.add(restock_btn);
+		total_pricelbl.setFont(new Font("Arial", Font.PLAIN, 16));
+		total_pricelbl.setBounds(94, 322, 82, 42);
+		order_panel.add(total_pricelbl);
+		clear_btn.addActionListener(e -> {
+			orderListModel.clear();
+			Request.orderList.clear();
+			total_pricelbl.setText(0+"");
+		});
 		
 		size_panel.setBorder(new LineBorder(new Color(0, 0, 0)));
 		size_panel.setBackground(new Color(240, 240, 240));
@@ -831,17 +946,16 @@ public class Main extends JFrame {
 		large_btn.setBounds(331, 11, 112, 35);
 		size_panel.add(large_btn);
 		
-		JPanel panel = new JPanel();
-		panel.setBorder(new LineBorder(new Color(0, 0, 0)));
-		panel.setBounds(440, 447, 601, 58);
-		contentPane.add(panel);
-		panel.setLayout(null);
+		qty_panel.setBorder(new LineBorder(new Color(0, 0, 0)));
+		qty_panel.setBounds(440, 447, 601, 58);
+		contentPane.add(qty_panel);
+		qty_panel.setLayout(null);
 		
 		JLabel qtylbl = new JLabel("QTY");
 		qtylbl.setBounds(10, 11, 35, 36);
 		qtylbl.setHorizontalAlignment(SwingConstants.CENTER);
 		qtylbl.setFont(new Font("Arial", Font.BOLD, 17));
-		panel.add(qtylbl);
+		qty_panel.add(qtylbl);
 		
 		
 		slider.setMaximum(50);
@@ -850,13 +964,13 @@ public class Main extends JFrame {
 		slider.setValue(1);
 		slider.setMinimum(1);
 		slider.setBounds(55, 20, 474, 36);
-		panel.add(slider);
+		qty_panel.add(slider);
 		
 		JLabel valueLabel = new JLabel("1");
 		valueLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		valueLabel.setFont(new Font("Arial", Font.BOLD, 17));
 		valueLabel.setBounds(544, 11, 35, 36);
-		panel.add(valueLabel);
+		qty_panel.add(valueLabel);
 		large_btn.addActionListener(e -> {
 			Request.unit_size = "large";
 			step2 = true;
