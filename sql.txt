@@ -1,0 +1,338 @@
+table info
+
+Table Product
+Product_id = 1
+Product_type = coffee
+Product_name = original
+Product_size = small
+Unit_price = 29
+
+size per size
+small = 29
+medium = 39
+large = 49
+
+product_type = coffee
+list of product bellow
+original blend
+cafe americano
+hazelnut espresso
+mocha latte
+caramel machiato
+french vannila
+
+product_type = milktea
+strawberry
+lychee
+blueberry
+watermelon
+mango
+orange
+grapes
+green apple
+melon
+kiwi
+
+the price of those below are
+size per size
+small = 29
+medium = 49
+large = 59
+
+
+product_type = frappe_coffe
+choco java
+choco hazelnut
+vanilla cream
+salted caramel
+green tea cream
+
+product_type = frappe_non_coffe
+strawberry cream
+cheesecake cream
+chocolate cream
+cookies & cream
+taro
+
+
+CREATE TABLE Product (
+    Product_id NUMBER(10) PRIMARY KEY,
+    Product_type VARCHAR2(50),
+    Product_name VARCHAR2(50),
+    Product_size VARCHAR2(20),
+    Unit_price NUMBER(10, 2)
+);
+
+-- Inserting coffee products
+INSERT INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price)
+VALUES (1, 'coffee', 'original blend', 'small', 29);
+
+INSERT INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price)
+VALUES (2, 'coffee', 'original blend', 'medium', 39);
+
+INSERT INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price)
+VALUES (3, 'coffee', 'original blend', 'large', 49);
+
+INSERT INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price)
+VALUES (4, 'coffee', 'cafe americano', 'small', 29);
+
+INSERT INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price)
+VALUES (5, 'coffee', 'cafe americano', 'medium', 39);
+
+INSERT INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price)
+VALUES (6, 'coffee', 'cafe americano', 'large', 49);
+
+INSERT INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price)
+VALUES (7, 'coffee', 'hazelnut espresso', 'small', 29);
+
+INSERT INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price)
+VALUES (8, 'coffee', 'hazelnut espresso', 'medium', 39);
+
+INSERT INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price)
+VALUES (9, 'coffee', 'hazelnut espresso', 'large', 49);
+
+INSERT INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price)
+VALUES (10, 'coffee', 'mocha latte', 'small', 29);
+
+INSERT INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price)
+VALUES (11, 'coffee', 'mocha latte', 'medium', 39);
+
+INSERT INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price)
+VALUES (12, 'coffee', 'mocha latte', 'large', 49);
+
+INSERT INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price)
+VALUES (13, 'coffee', 'caramel macchiato', 'small', 29);
+
+INSERT INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price)
+VALUES (14, 'coffee', 'caramel macchiato', 'medium', 39);
+
+INSERT INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price)
+VALUES (15, 'coffee', 'caramel macchiato', 'large', 49);
+
+INSERT INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price)
+VALUES (16, 'coffee', 'french vanilla', 'small', 29);
+
+INSERT INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price)
+VALUES (17, 'coffee', 'french vanilla', 'medium', 39);
+
+INSERT INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price)
+VALUES (18, 'coffee', 'french vanilla', 'large', 49);
+
+-- Inserting milk tea products
+INSERT INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price)
+VALUES (19, 'milktea', 'strawberry', 'small', 29);
+
+INSERT INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price)
+VALUES (20, 'milktea', 'strawberry', 'medium', 49);
+
+INSERT INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price)
+VALUES (21, 'milktea', 'strawberry', 'large', 59);
+
+-- Inserting frappe coffee products
+INSERT INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price)
+VALUES (22, 'frappe_coffee', 'choco java', 'small', 29);
+
+INSERT INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price)
+VALUES (23, 'frappe_coffee', 'choco java', 'medium', 39);
+
+INSERT INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price)
+VALUES (24, 'frappe_coffee', 'choco java', 'large', 49);
+
+INSERT INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price)
+VALUES (25, 'frappe_coffee', 'choco hazelnut', 'small', 29);
+
+INSERT INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price)
+VALUES (26, 'frappe_coffee', 'choco hazelnut', 'medium', 39);
+
+INSERT INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price)
+VALUES (27, 'frappe_coffee', 'choco hazelnut', 'large', 49);
+
+INSERT INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price)
+VALUES (28, 'frappe_coffee', 'vanilla cream', 'small', 29);
+
+INSERT INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price)
+VALUES (29, 'frappe_coffee', 'vanilla cream', 'medium', 39);
+
+INSERT INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price)
+VALUES (30, 'frappe_coffee', 'vanilla cream', 'large', 49);
+
+INSERT INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price)
+VALUES (31, 'frappe_coffee', 'salted caramel', 'small', 29);
+
+INSERT INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price)
+VALUES (32, 'frappe_coffee', 'salted caramel', 'medium', 39);
+
+INSERT INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price)
+VALUES (33, 'frappe_coffee', 'salted caramel', 'large', 49);
+
+INSERT INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price)
+VALUES (34, 'frappe_coffee', 'green tea cream', 'small', 29);
+
+INSERT INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price)
+VALUES (35, 'frappe_coffee', 'green tea cream', 'medium', 39);
+
+INSERT INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price)
+VALUES (36, 'frappe_coffee', 'green tea cream', 'large', 49);
+
+-- Inserting frappe non-coffee products
+INSERT INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price)
+VALUES (37, 'frappe_non_coffee', 'strawberry cream', 'small', 29);
+
+INSERT INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price)
+VALUES (38, 'frappe_non_coffee', 'strawberry cream', 'medium', 39);
+
+INSERT INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price)
+VALUES (39, 'frappe_non_coffee', 'strawberry cream', 'large', 49);
+
+INSERT INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price)
+VALUES (40, 'frappe_non_coffee', 'cheesecake cream', 'small', 29);
+
+INSERT INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price)
+VALUES (41, 'frappe_non_coffee', 'cheesecake cream', 'medium', 39);
+
+INSERT INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price)
+VALUES (42, 'frappe_non_coffee', 'cheesecake cream', 'large', 49);
+
+INSERT INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price)
+VALUES (43, 'frappe_non_coffee', 'chocolate cream', 'small', 29);
+
+INSERT INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price)
+VALUES (44, 'frappe_non_coffee', 'chocolate cream', 'medium', 39);
+
+INSERT INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price)
+VALUES (45, 'frappe_non_coffee', 'chocolate cream', 'large', 49);
+
+INSERT INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price)
+VALUES (46, 'frappe_non_coffee', 'cookies & cream', 'small', 29);
+
+INSERT INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price)
+VALUES (47, 'frappe_non_coffee', 'cookies & cream', 'medium', 39);
+
+INSERT INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price)
+VALUES (48, 'frappe_non_coffee', 'cookies & cream', 'large', 49);
+
+INSERT INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price)
+VALUES (49, 'frappe_non_coffee', 'taro', 'small', 29);
+
+INSERT INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price)
+VALUES (50, 'frappe_non_coffee', 'taro', 'medium', 39);
+
+INSERT INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price)
+VALUES (51, 'frappe_non_coffee', 'taro', 'large', 49);
+
+COMMIT;
+
+
+-----------------------------------------------------------------------
+table info
+
+table inventory
+
+item_id = 1
+item_name = sugar
+quantity = 99
+
+item names below
+sugar 
+cup
+straw
+nata
+coffee jelly
+pearl
+oreo
+fruit jelly
+coffe original powder
+coffee americano powder
+coffee hazelnut powder
+coffee mocha powder
+coffee machiato powder
+coffee vanilla powder
+milk original powder
+milk wintermelon powder
+milk hokkaidopowder
+milk taro powder
+milk okinawa powder
+milk cheesecake powder
+milk chocolate powder
+milk strawberry powder
+milk cookies n cream powder
+fruit strawberry powder
+fruit lychee powder
+fruit blueberry powder
+fruit wintermerlon powder
+fruit mango powder
+fruit orange powder
+fruit grapes powder
+fruit green apple powder
+fruit melon powder
+fruit kiwi powder
+frappe c choco java powder
+frappe c choco hazelnut powder
+frappe c vanilla caramel powder
+frappe c salted caramel powder
+frappe c green tea cream powder
+frappe nc strawberry cream powder
+frappe nc cheescake cream powder
+frappe nc chocolate cream powder
+frappe nc cookies n cream powder
+frappe nc taro  powder
+
+
+CREATE TABLE inventory (
+    item_id NUMBER(10),
+    item_name VARCHAR2(100),
+    quantity NUMBER(10)
+);
+
+INSERT ALL
+INTO inventory (item_id, item_name, quantity) VALUES (1, 'sugar', 100)
+INTO inventory (item_id, item_name, quantity) VALUES (2, 'cup', 100)
+INTO inventory (item_id, item_name, quantity) VALUES (3, 'straw', 100)
+INTO inventory (item_id, item_name, quantity) VALUES (4, 'nata', 100)
+INTO inventory (item_id, item_name, quantity) VALUES (5, 'coffee jelly', 100)
+INTO inventory (item_id, item_name, quantity) VALUES (6, 'pearl', 100)
+INTO inventory (item_id, item_name, quantity) VALUES (7, 'oreo', 100)
+INTO inventory (item_id, item_name, quantity) VALUES (8, 'fruit jelly', 100)
+INTO inventory (item_id, item_name, quantity) VALUES (9, 'coffee original powder', 100)
+INTO inventory (item_id, item_name, quantity) VALUES (10, 'coffee americano powder', 100)
+INTO inventory (item_id, item_name, quantity) VALUES (11, 'coffee hazelnut powder', 100)
+INTO inventory (item_id, item_name, quantity) VALUES (12, 'coffee mocha powder', 100)
+INTO inventory (item_id, item_name, quantity) VALUES (13, 'coffee machiato powder', 100)
+INTO inventory (item_id, item_name, quantity) VALUES (14, 'coffee vanilla powder', 100)
+INTO inventory (item_id, item_name, quantity) VALUES (15, 'milk original powder', 100)
+INTO inventory (item_id, item_name, quantity) VALUES (16, 'milk wintermelon powder', 100)
+INTO inventory (item_id, item_name, quantity) VALUES (17, 'milk hokkaidopowder', 100)
+INTO inventory (item_id, item_name, quantity) VALUES (18, 'milk taro powder', 100)
+INTO inventory (item_id, item_name, quantity) VALUES (19, 'milk okinawa powder', 100)
+INTO inventory (item_id, item_name, quantity) VALUES (20, 'milk cheesecake powder', 100)
+INTO inventory (item_id, item_name, quantity) VALUES (21, 'milk chocolate powder', 100)
+INTO inventory (item_id, item_name, quantity) VALUES (22, 'milk strawberry powder', 100)
+INTO inventory (item_id, item_name, quantity) VALUES (23, 'milk cookies n cream powder', 100)
+INTO inventory (item_id, item_name, quantity) VALUES (24, 'fruit strawberry powder', 100)
+INTO inventory (item_id, item_name, quantity) VALUES (25, 'fruit lychee powder', 100)
+INTO inventory (item_id, item_name, quantity) VALUES (26, 'fruit blueberry powder', 100)
+INTO inventory (item_id, item_name, quantity) VALUES (27, 'fruit wintermerlon powder', 100)
+INTO inventory (item_id, item_name, quantity) VALUES (28, 'fruit mango powder', 100)
+INTO inventory (item_id, item_name, quantity) VALUES (29, 'fruit orange powder', 100)
+INTO inventory (item_id, item_name, quantity) VALUES (30, 'fruit grapes powder', 100)
+INTO inventory (item_id, item_name, quantity) VALUES (31, 'fruit green apple powder', 100)
+INTO inventory (item_id, item_name, quantity) VALUES (32, 'fruit melon powder', 100)
+INTO inventory (item_id, item_name, quantity) VALUES (33, 'fruit kiwi powder', 100)
+INTO inventory (item_id, item_name, quantity) VALUES (34, 'frappe c choco java powder', 100)
+INTO inventory (item_id, item_name, quantity) VALUES (35, 'frappe c choco hazelnut powder', 100)
+INTO inventory (item_id, item_name, quantity) VALUES (36, 'frappe c vanilla caramel powder', 100)
+INTO inventory (item_id, item_name, quantity) VALUES (37, 'frappe c salted caramel powder', 100)
+INTO inventory (item_id, item_name, quantity) VALUES (38, 'frappe c green tea cream powder', 100)
+INTO inventory (item_id, item_name, quantity) VALUES (39, 'frappe nc strawberry cream powder', 100)
+INTO inventory (item_id, item_name, quantity) VALUES (40, 'frappe nc cheescake cream powder', 100)
+INTO inventory (item_id, item_name, quantity) VALUES (41, 'frappe nc chocolate cream powder', 100)
+INTO inventory (item_id, item_name, quantity) VALUES (42, 'frappe nc cookies n cream powder', 100)
+INTO inventory (item_id, item_name, quantity) VALUES (43, 'frappe nc taro  powder', 100)
+SELECT 1 FROM DUAL;
+
+
+
+
+
+
+

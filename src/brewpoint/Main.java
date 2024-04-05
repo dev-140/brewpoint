@@ -11,6 +11,10 @@ import java.awt.Cursor;
 import java.awt.Font;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.border.LineBorder;
+import javax.swing.JList;
 
 
 
@@ -20,6 +24,8 @@ public class Main extends JFrame {
 	static JPanel milk_panel = new JPanel();
 	static JPanel fruit_panel = new JPanel();
 	static JPanel frappe_panel = new JPanel();
+	static JPanel addon_panel = new JPanel();
+	static JPanel order_panel = new JPanel();
 	
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
@@ -45,10 +51,17 @@ public class Main extends JFrame {
 	 */
 	
 	public static void hidePanel() {
+		coffee_panel.setBorder(new LineBorder(new Color(0, 0, 0)));
 		coffee_panel.setVisible(false);
+		milk_panel.setBorder(new LineBorder(new Color(0, 0, 0)));
 		milk_panel.setVisible(false);
+		frappe_panel.setBorder(new LineBorder(new Color(0, 0, 0)));
 		frappe_panel.setVisible(false);
+		fruit_panel.setBorder(new LineBorder(new Color(0, 0, 0)));
 		fruit_panel.setVisible(false);
+		addon_panel.setBorder(new LineBorder(new Color(0, 0, 0)));
+		addon_panel.setVisible(false);
+		order_panel.setVisible(false);
 	}
 	
 	public static void showPanel(JPanel panelActive) {
@@ -74,7 +87,11 @@ public class Main extends JFrame {
 		contentPane.add(header);
 		
 		JButton coffee_btn = new JButton("COFFEE");
-		coffee_btn.addActionListener(e -> showPanel(coffee_panel));
+		coffee_btn.addActionListener(e -> {
+		    showPanel(coffee_panel);
+		    addon_panel.setVisible(true);
+			order_panel.setVisible(true);
+		});
 		coffee_btn.setForeground(new Color(0, 0, 0));
 		coffee_btn.setFont(new Font("Arial", Font.BOLD, 10));
 		coffee_btn.setBackground(new Color(192, 192, 192));
@@ -84,7 +101,11 @@ public class Main extends JFrame {
 		coffee_btn.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		
 		JButton milktea_btn = new JButton("MILKTEA");
-		milktea_btn.addActionListener(e -> showPanel(milk_panel));
+		milktea_btn.addActionListener(e -> {
+			showPanel(milk_panel);
+			addon_panel.setVisible(true);
+			order_panel.setVisible(true);
+		});
 		milktea_btn.setForeground(Color.BLACK);
 		milktea_btn.setFont(new Font("Arial", Font.BOLD, 10));
 		milktea_btn.setBorderPainted(false);
@@ -94,7 +115,11 @@ public class Main extends JFrame {
 		milktea_btn.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		
 		JButton fruittea_btn = new JButton("FRUIT TEA");
-		fruittea_btn.addActionListener(e -> showPanel(fruit_panel));
+		fruittea_btn.addActionListener(e -> {
+			showPanel(fruit_panel);
+			addon_panel.setVisible(true);
+			order_panel.setVisible(true);
+		});
 		fruittea_btn.setForeground(Color.BLACK);
 		fruittea_btn.setFont(new Font("Arial", Font.BOLD, 10));
 		fruittea_btn.setBorderPainted(false);
@@ -104,12 +129,16 @@ public class Main extends JFrame {
 		fruittea_btn.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		
 		JButton frappe_btn = new JButton("FRAPPE");
-		frappe_btn.addActionListener(e -> showPanel(frappe_panel));
+		frappe_btn.addActionListener(e -> { 	
+			showPanel(frappe_panel);
+			addon_panel.setVisible(true);
+			order_panel.setVisible(true);
+		});
 		frappe_btn.setForeground(Color.BLACK);
 		frappe_btn.setFont(new Font("Arial", Font.BOLD, 10));
 		frappe_btn.setBorderPainted(false);
 		frappe_btn.setBackground(Color.LIGHT_GRAY);
-		frappe_btn.setBounds(307, 53, 89, 45);
+		frappe_btn.setBounds(307, 53, 123, 45);
 		contentPane.add(frappe_btn);
 		frappe_btn.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		
@@ -118,16 +147,20 @@ public class Main extends JFrame {
 		inventory_btn.setFont(new Font("Arial", Font.BOLD, 10));
 		inventory_btn.setBorderPainted(false);
 		inventory_btn.setBackground(Color.LIGHT_GRAY);
-		inventory_btn.setBounds(10, 109, 110, 45);
+		inventory_btn.setBounds(10, 109, 131, 45);
 		contentPane.add(inventory_btn);
 		inventory_btn.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		
 		JButton sales_btn = new JButton("SALES");
+		sales_btn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		sales_btn.setForeground(Color.BLACK);
 		sales_btn.setFont(new Font("Arial", Font.BOLD, 10));
 		sales_btn.setBorderPainted(false);
 		sales_btn.setBackground(Color.LIGHT_GRAY);
-		sales_btn.setBounds(130, 109, 110, 45);
+		sales_btn.setBounds(151, 109, 146, 45);
 		contentPane.add(sales_btn);
 		sales_btn.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		
@@ -377,6 +410,186 @@ public class Main extends JFrame {
 		lblFrappe.setFont(new Font("Arial", Font.BOLD, 20));
 		lblFrappe.setBounds(229, 11, 176, 45);
 		frappe_panel.add(lblFrappe);
+		
+		JButton FP_cjava_btn = new JButton("CHOCO JAVA");
+		FP_cjava_btn.setForeground(Color.BLACK);
+		FP_cjava_btn.setFont(new Font("Arial", Font.BOLD, 10));
+		FP_cjava_btn.setBorderPainted(false);
+		FP_cjava_btn.setBackground(Color.LIGHT_GRAY);
+		FP_cjava_btn.setBounds(146, 82, 147, 45);
+		frappe_panel.add(FP_cjava_btn);
+		
+		JButton FP_strawcream_btn = new JButton("STRAWBERRY CREAM");
+		FP_strawcream_btn.setForeground(Color.BLACK);
+		FP_strawcream_btn.setFont(new Font("Arial", Font.BOLD, 10));
+		FP_strawcream_btn.setBorderPainted(false);
+		FP_strawcream_btn.setBackground(Color.LIGHT_GRAY);
+		FP_strawcream_btn.setBounds(334, 82, 147, 45);
+		frappe_panel.add(FP_strawcream_btn);
+		
+		JButton FP_ccake_btn = new JButton("CHEESECAKE CREAM");
+		FP_ccake_btn.setForeground(Color.BLACK);
+		FP_ccake_btn.setFont(new Font("Arial", Font.BOLD, 10));
+		FP_ccake_btn.setBorderPainted(false);
+		FP_ccake_btn.setBackground(Color.LIGHT_GRAY);
+		FP_ccake_btn.setBounds(334, 134, 147, 45);
+		frappe_panel.add(FP_ccake_btn);
+		
+		JButton FP_chazel_btn = new JButton("CHOCO HAZELNUT");
+		FP_chazel_btn.setForeground(Color.BLACK);
+		FP_chazel_btn.setFont(new Font("Arial", Font.BOLD, 10));
+		FP_chazel_btn.setBorderPainted(false);
+		FP_chazel_btn.setBackground(Color.LIGHT_GRAY);
+		FP_chazel_btn.setBounds(146, 134, 147, 45);
+		frappe_panel.add(FP_chazel_btn);
+		
+		JButton FP_chococream_btn = new JButton("CHOCOLATE CREAM");
+		FP_chococream_btn.setForeground(Color.BLACK);
+		FP_chococream_btn.setFont(new Font("Arial", Font.BOLD, 10));
+		FP_chococream_btn.setBorderPainted(false);
+		FP_chococream_btn.setBackground(Color.LIGHT_GRAY);
+		FP_chococream_btn.setBounds(334, 190, 147, 45);
+		frappe_panel.add(FP_chococream_btn);
+		
+		JButton FP_vcream_btn = new JButton("VANILLA CARAMEL");
+		FP_vcream_btn.setForeground(Color.BLACK);
+		FP_vcream_btn.setFont(new Font("Arial", Font.BOLD, 10));
+		FP_vcream_btn.setBorderPainted(false);
+		FP_vcream_btn.setBackground(Color.LIGHT_GRAY);
+		FP_vcream_btn.setBounds(146, 190, 147, 45);
+		frappe_panel.add(FP_vcream_btn);
+		
+		JButton FP_scaramel_btn = new JButton("SALTED CARAMEL");
+		FP_scaramel_btn.setForeground(Color.BLACK);
+		FP_scaramel_btn.setFont(new Font("Arial", Font.BOLD, 10));
+		FP_scaramel_btn.setBorderPainted(false);
+		FP_scaramel_btn.setBackground(Color.LIGHT_GRAY);
+		FP_scaramel_btn.setBounds(146, 246, 147, 45);
+		frappe_panel.add(FP_scaramel_btn);
+		
+		JButton FP_cookiecream_btn = new JButton("COOKIES & CREAM");
+		FP_cookiecream_btn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		FP_cookiecream_btn.setForeground(Color.BLACK);
+		FP_cookiecream_btn.setFont(new Font("Arial", Font.BOLD, 10));
+		FP_cookiecream_btn.setBorderPainted(false);
+		FP_cookiecream_btn.setBackground(Color.LIGHT_GRAY);
+		FP_cookiecream_btn.setBounds(334, 246, 147, 45);
+		frappe_panel.add(FP_cookiecream_btn);
+		
+		JButton FP_gtea_btn = new JButton("GREEN TEA CREAM");
+		FP_gtea_btn.setForeground(Color.BLACK);
+		FP_gtea_btn.setFont(new Font("Arial", Font.BOLD, 10));
+		FP_gtea_btn.setBorderPainted(false);
+		FP_gtea_btn.setBackground(Color.LIGHT_GRAY);
+		FP_gtea_btn.setBounds(146, 302, 147, 45);
+		frappe_panel.add(FP_gtea_btn);
+		
+		JButton FP_taro = new JButton("TARO");
+		FP_taro.setForeground(Color.BLACK);
+		FP_taro.setFont(new Font("Arial", Font.BOLD, 10));
+		FP_taro.setBorderPainted(false);
+		FP_taro.setBackground(Color.LIGHT_GRAY);
+		FP_taro.setBounds(334, 302, 147, 45);
+		frappe_panel.add(FP_taro);
+		
+		JLabel lblNewLabel = new JLabel("COFFEE BASED");
+		lblNewLabel.setBounds(181, 57, 75, 14);
+		frappe_panel.add(lblNewLabel);
+		
+		JLabel lblNonCoffee = new JLabel("NON COFFEE");
+		lblNonCoffee.setBounds(370, 57, 75, 14);
+		frappe_panel.add(lblNonCoffee);
+		
+		addon_panel.setBounds(440, 472, 601, 73);
+		contentPane.add(addon_panel);
+		addon_panel.setLayout(null);
+		
+		JButton AD_pearl = new JButton("PEARL");
+		AD_pearl.setForeground(Color.BLACK);
+		AD_pearl.setFont(new Font("Arial", Font.BOLD, 10));
+		AD_pearl.setBorderPainted(false);
+		AD_pearl.setBackground(Color.LIGHT_GRAY);
+		AD_pearl.setBounds(97, 17, 77, 45);
+		addon_panel.add(AD_pearl);
+		
+		JButton AD_oreo = new JButton("OREO");
+		AD_oreo.setForeground(Color.BLACK);
+		AD_oreo.setFont(new Font("Arial", Font.BOLD, 10));
+		AD_oreo.setBorderPainted(false);
+		AD_oreo.setBackground(Color.LIGHT_GRAY);
+		AD_oreo.setBounds(184, 17, 71, 45);
+		addon_panel.add(AD_oreo);
+		
+		JButton AD_nata = new JButton("NATA");
+		AD_nata.setForeground(Color.BLACK);
+		AD_nata.setFont(new Font("Arial", Font.BOLD, 10));
+		AD_nata.setBorderPainted(false);
+		AD_nata.setBackground(Color.LIGHT_GRAY);
+		AD_nata.setBounds(265, 17, 63, 45);
+		addon_panel.add(AD_nata);
+		
+		JButton AD_cjelly = new JButton("COFFEE JELLY");
+		AD_cjelly.setForeground(Color.BLACK);
+		AD_cjelly.setFont(new Font("Arial", Font.BOLD, 10));
+		AD_cjelly.setBorderPainted(false);
+		AD_cjelly.setBackground(Color.LIGHT_GRAY);
+		AD_cjelly.setBounds(338, 17, 112, 45);
+		addon_panel.add(AD_cjelly);
+		
+		JButton AD_fjelly = new JButton("FRUIT JELLY");
+		AD_fjelly.setForeground(Color.BLACK);
+		AD_fjelly.setFont(new Font("Arial", Font.BOLD, 10));
+		AD_fjelly.setBorderPainted(false);
+		AD_fjelly.setBackground(Color.LIGHT_GRAY);
+		AD_fjelly.setBounds(460, 17, 131, 45);
+		addon_panel.add(AD_fjelly);
+		
+		JButton AD_none = new JButton("NONE");
+		AD_none.setForeground(Color.BLACK);
+		AD_none.setFont(new Font("Arial", Font.BOLD, 10));
+		AD_none.setBorderPainted(false);
+		AD_none.setBackground(Color.LIGHT_GRAY);
+		AD_none.setBounds(10, 17, 77, 45);
+		addon_panel.add(AD_none);
+		
+		order_panel.setBorder(new LineBorder(new Color(0, 0, 0)));
+		order_panel.setBackground(new Color(255, 255, 255));
+		order_panel.setBounds(10, 165, 416, 380);
+		contentPane.add(order_panel);
+		order_panel.setLayout(null);
+		
+		JLabel orderlbl = new JLabel("ORDER");
+		orderlbl.setBounds(10, 11, 82, 24);
+		orderlbl.setFont(new Font("Arial", Font.BOLD, 20));
+		order_panel.add(orderlbl);
+		
+		JList list = new JList();
+		list.setBounds(10, 46, 396, 249);
+		order_panel.add(list);
+		
+		JButton checkout_btn = new JButton("CHECKOUT");
+		checkout_btn.setForeground(Color.BLACK);
+		checkout_btn.setFont(new Font("Arial", Font.BOLD, 10));
+		checkout_btn.setBorderPainted(false);
+		checkout_btn.setBackground(Color.LIGHT_GRAY);
+		checkout_btn.setBounds(303, 324, 89, 45);
+		order_panel.add(checkout_btn);
+		
+		JLabel lblTotal = new JLabel("TOTAL:");
+		lblTotal.setFont(new Font("Arial", Font.BOLD, 20));
+		lblTotal.setBounds(10, 322, 82, 42);
+		order_panel.add(lblTotal);
+		
+		JButton restock_btn = new JButton("RESTOCK");
+		restock_btn.setForeground(Color.BLACK);
+		restock_btn.setFont(new Font("Arial", Font.BOLD, 10));
+		restock_btn.setBorderPainted(false);
+		restock_btn.setBackground(Color.LIGHT_GRAY);
+		restock_btn.setBounds(307, 109, 120, 45);
+		contentPane.add(restock_btn);
 
 	}
 }
