@@ -11,8 +11,6 @@ import java.awt.Cursor;
 import java.awt.Font;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 
 
 
@@ -144,54 +142,59 @@ public class Main extends JFrame {
 		lblCoffee.setBounds(229, 11, 176, 45);
 		coffee_panel.add(lblCoffee);
 		
-		// coffee options btn
-		JButton original_btn = new JButton("ORIGINAL");
-		original_btn.setForeground(Color.BLACK);
-		original_btn.setFont(new Font("Arial", Font.BOLD, 10));
-		original_btn.setBorderPainted(false);
-		original_btn.setBackground(Color.LIGHT_GRAY);
-		original_btn.setBounds(10, 58, 150, 45);
-		coffee_panel.add(original_btn);
+		// --------------------------------------------------------------------------------------------------------------------------------->
+		// --------------------------------------------------------------------------------------------------------------------------------->
+		// --------- coffee options btn ---------------------------------------------------------------------------------------------------->
+		// --------------------------------------------------------------------------------------------------------------------------------->
+		// --------------------------------------------------------------------------------------------------------------------------------->
+
+		JButton C_original_btn = new JButton("ORIGINAL");
+		C_original_btn.setForeground(Color.BLACK);
+		C_original_btn.setFont(new Font("Arial", Font.BOLD, 10));
+		C_original_btn.setBorderPainted(false);
+		C_original_btn.setBackground(Color.LIGHT_GRAY);
+		C_original_btn.setBounds(161, 66, 150, 45);
+		coffee_panel.add(C_original_btn);
 		
-		JButton hazelnut_btn = new JButton("HAZELNUT");
-		hazelnut_btn.setForeground(Color.BLACK);
-		hazelnut_btn.setFont(new Font("Arial", Font.BOLD, 10));
-		hazelnut_btn.setBorderPainted(false);
-		hazelnut_btn.setBackground(Color.LIGHT_GRAY);
-		hazelnut_btn.setBounds(10, 111, 150, 45);
-		coffee_panel.add(hazelnut_btn);
+		JButton C_hazelnut_btn = new JButton("HAZELNUT");
+		C_hazelnut_btn.setForeground(Color.BLACK);
+		C_hazelnut_btn.setFont(new Font("Arial", Font.BOLD, 10));
+		C_hazelnut_btn.setBorderPainted(false);
+		C_hazelnut_btn.setBackground(Color.LIGHT_GRAY);
+		C_hazelnut_btn.setBounds(161, 119, 150, 45);
+		coffee_panel.add(C_hazelnut_btn);
 		
-		JButton machiato_btn = new JButton("MACHIATO");
-		machiato_btn.setForeground(Color.BLACK);
-		machiato_btn.setFont(new Font("Arial", Font.BOLD, 10));
-		machiato_btn.setBorderPainted(false);
-		machiato_btn.setBackground(Color.LIGHT_GRAY);
-		machiato_btn.setBounds(10, 167, 150, 45);
-		coffee_panel.add(machiato_btn);
+		JButton C_machiato_btn = new JButton("MACHIATO");
+		C_machiato_btn.setForeground(Color.BLACK);
+		C_machiato_btn.setFont(new Font("Arial", Font.BOLD, 10));
+		C_machiato_btn.setBorderPainted(false);
+		C_machiato_btn.setBackground(Color.LIGHT_GRAY);
+		C_machiato_btn.setBounds(161, 175, 150, 45);
+		coffee_panel.add(C_machiato_btn);
 		
-		JButton americano_btn = new JButton("AMERICANO");
-		americano_btn.setForeground(Color.BLACK);
-		americano_btn.setFont(new Font("Arial", Font.BOLD, 10));
-		americano_btn.setBorderPainted(false);
-		americano_btn.setBackground(Color.LIGHT_GRAY);
-		americano_btn.setBounds(170, 58, 150, 45);
-		coffee_panel.add(americano_btn);
+		JButton C_americano_btn = new JButton("AMERICANO");
+		C_americano_btn.setForeground(Color.BLACK);
+		C_americano_btn.setFont(new Font("Arial", Font.BOLD, 10));
+		C_americano_btn.setBorderPainted(false);
+		C_americano_btn.setBackground(Color.LIGHT_GRAY);
+		C_americano_btn.setBounds(321, 66, 150, 45);
+		coffee_panel.add(C_americano_btn);
 		
-		JButton mocha_btn = new JButton("MOCHA");
-		mocha_btn.setForeground(Color.BLACK);
-		mocha_btn.setFont(new Font("Arial", Font.BOLD, 10));
-		mocha_btn.setBorderPainted(false);
-		mocha_btn.setBackground(Color.LIGHT_GRAY);
-		mocha_btn.setBounds(170, 111, 150, 45);
-		coffee_panel.add(mocha_btn);
+		JButton C_mocha_btn = new JButton("MOCHA");
+		C_mocha_btn.setForeground(Color.BLACK);
+		C_mocha_btn.setFont(new Font("Arial", Font.BOLD, 10));
+		C_mocha_btn.setBorderPainted(false);
+		C_mocha_btn.setBackground(Color.LIGHT_GRAY);
+		C_mocha_btn.setBounds(321, 119, 150, 45);
+		coffee_panel.add(C_mocha_btn);
 		
-		JButton vanilla_btn = new JButton("VANILLA");
-		vanilla_btn.setForeground(Color.BLACK);
-		vanilla_btn.setFont(new Font("Arial", Font.BOLD, 10));
-		vanilla_btn.setBorderPainted(false);
-		vanilla_btn.setBackground(Color.LIGHT_GRAY);
-		vanilla_btn.setBounds(170, 167, 150, 45);
-		coffee_panel.add(vanilla_btn);
+		JButton C_vanilla_btn = new JButton("VANILLA");
+		C_vanilla_btn.setForeground(Color.BLACK);
+		C_vanilla_btn.setFont(new Font("Arial", Font.BOLD, 10));
+		C_vanilla_btn.setBorderPainted(false);
+		C_vanilla_btn.setBackground(Color.LIGHT_GRAY);
+		C_vanilla_btn.setBounds(321, 175, 150, 45);
+		coffee_panel.add(C_vanilla_btn);
 		
 		milk_panel.setBounds(440, 24, 601, 440);
 		contentPane.add(milk_panel);
@@ -203,6 +206,78 @@ public class Main extends JFrame {
 		lblMilk.setBounds(229, 11, 176, 45);
 		milk_panel.add(lblMilk);
 		
+		JButton M_original_btn = new JButton("ORIGINAL");
+		M_original_btn.setForeground(Color.BLACK);
+		M_original_btn.setFont(new Font("Arial", Font.BOLD, 10));
+		M_original_btn.setBorderPainted(false);
+		M_original_btn.setBackground(Color.LIGHT_GRAY);
+		M_original_btn.setBounds(109, 65, 195, 45);
+		milk_panel.add(M_original_btn);
+		
+		JButton M_hokkaido_btn = new JButton("HOKKAIDO");
+		M_hokkaido_btn.setForeground(Color.BLACK);
+		M_hokkaido_btn.setFont(new Font("Arial", Font.BOLD, 10));
+		M_hokkaido_btn.setBorderPainted(false);
+		M_hokkaido_btn.setBackground(Color.LIGHT_GRAY);
+		M_hokkaido_btn.setBounds(109, 121, 195, 45);
+		milk_panel.add(M_hokkaido_btn);
+		
+		JButton M_okinawa_btn = new JButton("OKINAWA");
+		M_okinawa_btn.setForeground(Color.BLACK);
+		M_okinawa_btn.setFont(new Font("Arial", Font.BOLD, 10));
+		M_okinawa_btn.setBorderPainted(false);
+		M_okinawa_btn.setBackground(Color.LIGHT_GRAY);
+		M_okinawa_btn.setBounds(109, 177, 195, 45);
+		milk_panel.add(M_okinawa_btn);
+		
+		JButton M_winM_btn = new JButton("WINTER MELON");
+		M_winM_btn.setForeground(Color.BLACK);
+		M_winM_btn.setFont(new Font("Arial", Font.BOLD, 10));
+		M_winM_btn.setBorderPainted(false);
+		M_winM_btn.setBackground(Color.LIGHT_GRAY);
+		M_winM_btn.setBounds(314, 65, 195, 45);
+		milk_panel.add(M_winM_btn);
+		
+		JButton M_taro_btn = new JButton("TARO");
+		M_taro_btn.setForeground(Color.BLACK);
+		M_taro_btn.setFont(new Font("Arial", Font.BOLD, 10));
+		M_taro_btn.setBorderPainted(false);
+		M_taro_btn.setBackground(Color.LIGHT_GRAY);
+		M_taro_btn.setBounds(314, 121, 195, 45);
+		milk_panel.add(M_taro_btn);
+		
+		JButton M_ccake_btn = new JButton("CHEESE CAKE");
+		M_ccake_btn.setForeground(Color.BLACK);
+		M_ccake_btn.setFont(new Font("Arial", Font.BOLD, 10));
+		M_ccake_btn.setBorderPainted(false);
+		M_ccake_btn.setBackground(Color.LIGHT_GRAY);
+		M_ccake_btn.setBounds(314, 177, 195, 45);
+		milk_panel.add(M_ccake_btn);
+		
+		JButton M_choco_btn = new JButton("CHOCOLATE");
+		M_choco_btn.setForeground(Color.BLACK);
+		M_choco_btn.setFont(new Font("Arial", Font.BOLD, 10));
+		M_choco_btn.setBorderPainted(false);
+		M_choco_btn.setBackground(Color.LIGHT_GRAY);
+		M_choco_btn.setBounds(109, 233, 195, 45);
+		milk_panel.add(M_choco_btn);
+		
+		JButton M_straw_btn = new JButton("STRAWBERRY");
+		M_straw_btn.setForeground(Color.BLACK);
+		M_straw_btn.setFont(new Font("Arial", Font.BOLD, 10));
+		M_straw_btn.setBorderPainted(false);
+		M_straw_btn.setBackground(Color.LIGHT_GRAY);
+		M_straw_btn.setBounds(314, 233, 195, 45);
+		milk_panel.add(M_straw_btn);
+		
+		JButton M_ccream_btn = new JButton("COOKIES & CREAM");
+		M_ccream_btn.setForeground(Color.BLACK);
+		M_ccream_btn.setFont(new Font("Arial", Font.BOLD, 10));
+		M_ccream_btn.setBorderPainted(false);
+		M_ccream_btn.setBackground(Color.LIGHT_GRAY);
+		M_ccream_btn.setBounds(109, 289, 195, 45);
+		milk_panel.add(M_ccream_btn);
+		
 		fruit_panel.setBounds(440, 24, 601, 440);
 		contentPane.add(fruit_panel);
 		fruit_panel.setLayout(null);
@@ -212,6 +287,86 @@ public class Main extends JFrame {
 		lblfruit.setFont(new Font("Arial", Font.BOLD, 20));
 		lblfruit.setBounds(229, 11, 176, 45);
 		fruit_panel.add(lblfruit);
+		
+		JButton F_straw_btn = new JButton("STRAWBERRY");
+		F_straw_btn.setForeground(Color.BLACK);
+		F_straw_btn.setFont(new Font("Arial", Font.BOLD, 10));
+		F_straw_btn.setBorderPainted(false);
+		F_straw_btn.setBackground(Color.LIGHT_GRAY);
+		F_straw_btn.setBounds(153, 67, 161, 45);
+		fruit_panel.add(F_straw_btn);
+		
+		JButton F_lychee_btn = new JButton("LYCHEE");
+		F_lychee_btn.setForeground(Color.BLACK);
+		F_lychee_btn.setFont(new Font("Arial", Font.BOLD, 10));
+		F_lychee_btn.setBorderPainted(false);
+		F_lychee_btn.setBackground(Color.LIGHT_GRAY);
+		F_lychee_btn.setBounds(327, 67, 161, 45);
+		fruit_panel.add(F_lychee_btn);
+		
+		JButton F_watermelon_btn = new JButton("WATERMELON");
+		F_watermelon_btn.setForeground(Color.BLACK);
+		F_watermelon_btn.setFont(new Font("Arial", Font.BOLD, 10));
+		F_watermelon_btn.setBorderPainted(false);
+		F_watermelon_btn.setBackground(Color.LIGHT_GRAY);
+		F_watermelon_btn.setBounds(327, 123, 161, 45);
+		fruit_panel.add(F_watermelon_btn);
+		
+		JButton F_blue_btn = new JButton("BLUEBERRY");
+		F_blue_btn.setForeground(Color.BLACK);
+		F_blue_btn.setFont(new Font("Arial", Font.BOLD, 10));
+		F_blue_btn.setBorderPainted(false);
+		F_blue_btn.setBackground(Color.LIGHT_GRAY);
+		F_blue_btn.setBounds(153, 123, 161, 45);
+		fruit_panel.add(F_blue_btn);
+		
+		JButton F_orange_btn = new JButton("ORRANGE");
+		F_orange_btn.setForeground(Color.BLACK);
+		F_orange_btn.setFont(new Font("Arial", Font.BOLD, 10));
+		F_orange_btn.setBorderPainted(false);
+		F_orange_btn.setBackground(Color.LIGHT_GRAY);
+		F_orange_btn.setBounds(327, 179, 161, 45);
+		fruit_panel.add(F_orange_btn);
+		
+		JButton F_mango_btn = new JButton("MANGO");
+		F_mango_btn.setForeground(Color.BLACK);
+		F_mango_btn.setFont(new Font("Arial", Font.BOLD, 10));
+		F_mango_btn.setBorderPainted(false);
+		F_mango_btn.setBackground(Color.LIGHT_GRAY);
+		F_mango_btn.setBounds(153, 179, 161, 45);
+		fruit_panel.add(F_mango_btn);
+		
+		JButton F_gapple_btn = new JButton("GREEN APPLE");
+		F_gapple_btn.setForeground(Color.BLACK);
+		F_gapple_btn.setFont(new Font("Arial", Font.BOLD, 10));
+		F_gapple_btn.setBorderPainted(false);
+		F_gapple_btn.setBackground(Color.LIGHT_GRAY);
+		F_gapple_btn.setBounds(327, 236, 161, 45);
+		fruit_panel.add(F_gapple_btn);
+		
+		JButton F_grape_btn = new JButton("GRAPES");
+		F_grape_btn.setForeground(Color.BLACK);
+		F_grape_btn.setFont(new Font("Arial", Font.BOLD, 10));
+		F_grape_btn.setBorderPainted(false);
+		F_grape_btn.setBackground(Color.LIGHT_GRAY);
+		F_grape_btn.setBounds(153, 236, 161, 45);
+		fruit_panel.add(F_grape_btn);
+		
+		JButton F_kiwi_btn = new JButton("KIWI");
+		F_kiwi_btn.setForeground(Color.BLACK);
+		F_kiwi_btn.setFont(new Font("Arial", Font.BOLD, 10));
+		F_kiwi_btn.setBorderPainted(false);
+		F_kiwi_btn.setBackground(Color.LIGHT_GRAY);
+		F_kiwi_btn.setBounds(327, 292, 161, 45);
+		fruit_panel.add(F_kiwi_btn);
+		
+		JButton F_melon_btn = new JButton("MELON");
+		F_melon_btn.setForeground(Color.BLACK);
+		F_melon_btn.setFont(new Font("Arial", Font.BOLD, 10));
+		F_melon_btn.setBorderPainted(false);
+		F_melon_btn.setBackground(Color.LIGHT_GRAY);
+		F_melon_btn.setBounds(153, 292, 161, 45);
+		fruit_panel.add(F_melon_btn);
 		
 		frappe_panel.setBounds(440, 24, 601, 440);
 		contentPane.add(frappe_panel);
