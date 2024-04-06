@@ -99,7 +99,13 @@ public class Main extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		hidePanel();
+//		hidePanel();
+		
+		showPanel(coffee_panel);
+	    addon_panel.setVisible(true);
+		order_panel.setVisible(true);
+		size_panel.setVisible(true);
+		qty_panel.setVisible(true);
 		
 		JLabel header = new JLabel("8 AM BrewPoint");
 		header.setFont(new Font("Arial", Font.BOLD, 20));
@@ -120,7 +126,7 @@ public class Main extends JFrame {
 		coffee_btn.setBorderPainted(false); // Remove the outline
 		coffee_btn.setBounds(10, 53, 89, 45);
 		contentPane.add(coffee_btn);
-		coffee_btn.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		coffee_btn.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR)); 
 		
 		JButton milktea_btn = new JButton("MILKTEA");
 		milktea_btn.addActionListener(e -> {

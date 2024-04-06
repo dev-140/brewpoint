@@ -40,7 +40,7 @@ public class Sales extends JFrame {
      */
     public Sales() {
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        setBounds(100, 100, 936, 517);
+        setBounds(100, 100, 1000, 553);
         contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         setContentPane(contentPane);
@@ -80,17 +80,17 @@ public class Sales extends JFrame {
 
         // Create a scroll pane and add the table to it
         JScrollPane scrollPane = new JScrollPane(table);
-        scrollPane.setBounds(10, 11, 900, 402);
+        scrollPane.setBounds(10, 11, 964, 402);
         contentPane.add(scrollPane);
 
         JLabel lblNewLabel = new JLabel("TOTAL SALES:");
         lblNewLabel.setFont(new Font("Arial", Font.BOLD, 20));
-        lblNewLabel.setBounds(303, 424, 155, 38);
+        lblNewLabel.setBounds(339, 424, 155, 38);
         contentPane.add(lblNewLabel);
 
         JLabel total_salesLBL = new JLabel("0");
         total_salesLBL.setFont(new Font("Arial", Font.BOLD, 20));
-        total_salesLBL.setBounds(462, 424, 216, 38);
+        total_salesLBL.setBounds(498, 424, 216, 38);
         contentPane.add(total_salesLBL);
 
         // Set the text for the total sales label
