@@ -8,7 +8,7 @@ public class DBUtil {
     public static Connection getDBConnection() {
         try {
             Class.forName("oracle.jdbc.driver.OracleDriver");
-            con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "username", "password");
+            con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "system", "ora1");
             return con;
         } catch (Exception e) {
             System.out.println("Connection could not be established");
@@ -19,21 +19,15 @@ public class DBUtil {
 
     public static void printProductsTable() {
         try {
-            // Establish database connection
             Connection con = getDBConnection();
             if (con == null) {
                 System.out.println("Database connection is not available.");
                 return;
             }
 
-            // Create SQL statement
             String sql = "SELECT * FROM inventory";
-
-            // Execute SQL query
             Statement stmt = con.createStatement();
             ResultSet rs = stmt.executeQuery(sql);
-
-            // Print column names
             ResultSetMetaData metaData = rs.getMetaData();
             int columnCount = metaData.getColumnCount();
             for (int i = 1; i <= columnCount; i++) {
@@ -41,7 +35,6 @@ public class DBUtil {
             }
             System.out.println();
 
-            // Print table data
             while (rs.next()) {
                 for (int i = 1; i <= columnCount; i++) {
                     System.out.print(rs.getString(i) + "\t");
@@ -49,7 +42,6 @@ public class DBUtil {
                 System.out.println();
             }
 
-            // Close resources
             rs.close();
             stmt.close();
             con.close();
@@ -60,7 +52,6 @@ public class DBUtil {
     }
 
     public static void main(String[] args) {
-        // Print products table
         printProductsTable();
     }
 }
