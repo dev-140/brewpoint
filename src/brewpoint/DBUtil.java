@@ -8,7 +8,7 @@ public class DBUtil {
     public static Connection getDBConnection() {
         try {
             Class.forName("oracle.jdbc.driver.OracleDriver");
-            con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "system", "ora1");
+            con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "username", "password");
             return con;
         } catch (Exception e) {
             System.out.println("Connection could not be established");
