@@ -81,7 +81,6 @@ public class Request {
 		
 	}
 	
-//	updateDatabaseInventory(prodname, quantity);
 	private static void updateDatabaseInventory(String itemName, int quantity) {
         try (Connection con = DBUtil.getDBConnection()) {
             if (con == null) {
@@ -89,7 +88,6 @@ public class Request {
                 return;
             }
             
-            // Retrieve current quantity from database
             String sql = "SELECT quantity FROM inventory WHERE item_name = ?";
             try (PreparedStatement stmt = con.prepareStatement(sql)) {
                 stmt.setString(1, itemName);
@@ -97,14 +95,12 @@ public class Request {
                 if (rs.next()) {
                     int currentQuantity = rs.getInt("quantity");
                     
-                    // Calculate new quantity after subtracting ordered quantity
                     int newQuantity = currentQuantity - quantity;
                     if (newQuantity < 0) {
                         System.out.println("Error: Ordered quantity exceeds available quantity.");
                         return;
                     }
                     
-                    // Update database with new quantity
                     sql = "UPDATE inventory SET quantity = ? WHERE item_name = ?";
                     try (PreparedStatement updateStmt = con.prepareStatement(sql)) {
                         updateStmt.setInt(1, newQuantity);
@@ -129,7 +125,6 @@ public class Request {
                 return;
             }
             
-            // Retrieve current quantity from database
             String sql = "SELECT quantity FROM inventory WHERE item_name = ?";
             try (PreparedStatement stmt = con.prepareStatement(sql)) {
                 stmt.setString(1, itemName);
@@ -137,14 +132,12 @@ public class Request {
                 if (rs.next()) {
                     int currentQuantity = rs.getInt("quantity");
                     
-                    // Calculate new quantity after subtracting ordered quantity
                     int newQuantity = currentQuantity - quantity;
                     if (newQuantity < 0) {
                         System.out.println("Error: Ordered quantity exceeds available quantity.");
                         return;
                     }
                     
-                    // Update database with new quantity
                     sql = "UPDATE inventory SET quantity = ? WHERE item_name = ?";
                     try (PreparedStatement updateStmt = con.prepareStatement(sql)) {
                         updateStmt.setInt(1, newQuantity);
@@ -169,7 +162,6 @@ public class Request {
                 return;
             }
             
-            // Retrieve current quantity from database
             String sql = "SELECT quantity FROM inventory WHERE item_name = ?";
             try (PreparedStatement stmt = con.prepareStatement(sql)) {
                 stmt.setString(1, itemName);
@@ -177,14 +169,12 @@ public class Request {
                 if (rs.next()) {
                     int currentQuantity = rs.getInt("quantity");
                     
-                    // Calculate new quantity after subtracting ordered quantity
                     int newQuantity = currentQuantity - quantity;
                     if (newQuantity < 0) {
                         System.out.println("Error: Ordered quantity exceeds available quantity.");
                         return;
                     }
                     
-                    // Update database with new quantity
                     sql = "UPDATE inventory SET quantity = ? WHERE item_name = ?";
                     try (PreparedStatement updateStmt = con.prepareStatement(sql)) {
                         updateStmt.setInt(1, newQuantity);
@@ -208,8 +198,7 @@ public class Request {
                 System.out.println("Database connection is not available.");
                 return;
             }
-            
-            // Retrieve current quantity from database
+
             String sql = "SELECT quantity FROM inventory WHERE item_name = ?";
             try (PreparedStatement stmt = con.prepareStatement(sql)) {
                 stmt.setString(1, itemName);
@@ -224,7 +213,6 @@ public class Request {
                         return;
                     }
                     
-                    // Update database with new quantity
                     sql = "UPDATE inventory SET quantity = ? WHERE item_name = ?";
                     try (PreparedStatement updateStmt = con.prepareStatement(sql)) {
                         updateStmt.setInt(1, newQuantity);
@@ -249,7 +237,6 @@ public class Request {
                 return;
             }
             
-            // Retrieve current quantity from database
             String sql = "SELECT quantity FROM inventory WHERE item_name = ?";
             try (PreparedStatement stmt = con.prepareStatement(sql)) {
                 stmt.setString(1, itemName);
@@ -257,14 +244,12 @@ public class Request {
                 if (rs.next()) {
                     int currentQuantity = rs.getInt("quantity");
                     
-                    // Calculate new quantity after subtracting ordered quantity
                     int newQuantity = currentQuantity - quantity;
                     if (newQuantity < 0) {
                         System.out.println("Error: Ordered quantity exceeds available quantity.");
                         return;
                     }
                     
-                    // Update database with new quantity
                     sql = "UPDATE inventory SET quantity = ? WHERE item_name = ?";
                     try (PreparedStatement updateStmt = con.prepareStatement(sql)) {
                         updateStmt.setInt(1, newQuantity);
@@ -289,14 +274,13 @@ public class Request {
 	            return;
 	        }
 
-	        // Concatenate all item names into a single string
 	        StringBuilder itemNamesBuilder = new StringBuilder();
 	        for (int i = 0; i < orderList.size(); i++) {
 	            String order = orderList.getElementAt(i);
 	            String itemName = order.split(" - ")[0];
 	            itemNamesBuilder.append(itemName);
 	            if (i < orderList.size() - 1) {
-	                itemNamesBuilder.append(", "); // Add comma between item names
+	                itemNamesBuilder.append(", ");
 	            }
 	        }
 	        String itemNames = itemNamesBuilder.toString();
@@ -305,17 +289,12 @@ public class Request {
 	        String insertQuery = "INSERT INTO SALES_TABLE (item, total_price, \"date\", total_sales) VALUES (?, ?, SYSDATE, ?)";
 
 	        try (PreparedStatement stmt = con.prepareStatement(insertQuery)) {
-	            // Set parameters for the prepared statement
 	            stmt.setString(1, itemNames);
 	            stmt.setDouble(2, totalPrice);
-	            stmt.setDouble(3, 0.0); // Set total_sales to 0 as default
-
-	            // Execute the query to insert sales data
+	            stmt.setDouble(3, 0.0);
 	            stmt.executeUpdate();
 
 	            System.out.println("Sales data inserted successfully.");
-	            
-	            // Recalculate and update the total sales 
 	            updateTotalSales(con);
 	        }
 	    } catch (SQLException e) {
@@ -325,11 +304,9 @@ public class Request {
 
 	private static void updateTotalSales(Connection con) {
 	    try {
-	        // SQL query to recalculate total sales
 	        String updateQuery = "UPDATE SALES_TABLE SET total_sales = (SELECT SUM(total_price) FROM SALES_TABLE)";
 
 	        try (PreparedStatement stmt = con.prepareStatement(updateQuery)) {
-	            // Execute the update query
 	            stmt.executeUpdate();
 
 	            System.out.println("Total sales updated successfully.");
@@ -338,9 +315,5 @@ public class Request {
 	        System.out.println("Error updating total sales: " + e.getMessage());
 	    }
 	}
-
-
-
-
 }
 

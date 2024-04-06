@@ -21,7 +21,17 @@ mocha latte
 caramel machiato
 french vannila
 
-product_type = milktea
+product_type = milk tea
+original milktea
+wintermelon
+hokkaido
+taro
+okinawa
+cheesecake
+chocolate
+cookies n cream
+
+product_type = fruit tea
 strawberry
 lychee
 blueberry
@@ -222,6 +232,88 @@ VALUES (51, 'frappe_non_coffee', 'taro', 'large', 49);
 
 COMMIT;
 
+start here
+
+INSERT ALL
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (1, 'coffee', 'original blend', 'small', 29)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (2, 'coffee', 'original blend', 'medium', 39)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (3, 'coffee', 'original blend', 'large', 49)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (4, 'coffee', 'cafe americano', 'small', 29)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (5, 'coffee', 'cafe americano', 'medium', 39)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (6, 'coffee', 'cafe americano', 'large', 49)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (7, 'coffee', 'hazelnut espresso', 'small', 29)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (8, 'coffee', 'hazelnut espresso', 'medium', 39)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (9, 'coffee', 'hazelnut espresso', 'large', 49)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (10, 'coffee', 'mocha latte', 'small', 29)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (11, 'coffee', 'mocha latte', 'medium', 39)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (12, 'coffee', 'mocha latte', 'large', 49)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (13, 'coffee', 'caramel macchiato', 'small', 29)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (14, 'coffee', 'caramel macchiato', 'medium', 39)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (15, 'coffee', 'caramel macchiato', 'large', 49)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (16, 'coffee', 'french vanilla', 'small', 29)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (17, 'coffee', 'french vanilla', 'medium', 39)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (18, 'coffee', 'french vanilla', 'large', 49)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (19, 'milktea', 'strawberry', 'small', 29)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (20, 'milktea', 'strawberry', 'medium', 49)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (21, 'milktea', 'strawberry', 'large', 59)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (22, 'frappe_coffee', 'choco java', 'small', 29)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (23, 'frappe_coffee', 'choco java', 'medium', 39)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (24, 'frappe_coffee', 'choco java', 'large', 49)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (25, 'frappe_coffee', 'choco hazelnut', 'small', 29)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (26, 'frappe_coffee', 'choco hazelnut', 'medium', 39)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (27, 'frappe_coffee', 'choco hazelnut', 'large', 49)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (28, 'frappe_coffee', 'vanilla cream', 'small', 29)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (29, 'frappe_coffee', 'vanilla cream', 'medium', 39)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (30, 'frappe_coffee', 'vanilla cream', 'large', 49)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (31, 'frappe_coffee', 'salted caramel', 'small', 29)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (32, 'frappe_coffee', 'salted caramel', 'medium', 39)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (33, 'frappe_coffee', 'salted caramel', 'large', 49)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (34, 'frappe_coffee', 'green tea cream', 'small', 29)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (35, 'frappe_coffee', 'green tea cream', 'medium', 39)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (36, 'frappe_coffee', 'green tea cream', 'large', 49)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (37, 'frappe_non_coffee', 'strawberry cream', 'small', 29)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (38, 'frappe_non_coffee', 'strawberry cream', 'medium', 39)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (39, 'frappe_non_coffee', 'strawberry cream', 'large', 49)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (40, 'frappe_non_coffee', 'cheesecake cream', 'small', 29)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (41, 'frappe_non_coffee', 'cheesecake cream', 'medium', 39)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (42, 'frappe_non_coffee', 'cheesecake cream', 'large', 49)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (43, 'frappe_non_coffee', 'chocolate cream', 'small', 29)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (44, 'frappe_non_coffee', 'chocolate cream', 'medium', 39)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (45, 'frappe_non_coffee', 'chocolate cream', 'large', 49)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (46, 'frappe_non_coffee', 'cookies & cream', 'small', 29)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (47, 'frappe_non_coffee', 'cookies & cream', 'medium', 39)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (48, 'frappe_non_coffee', 'cookies & cream', 'large', 49)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (49, 'frappe_non_coffee', 'taro', 'small', 29)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (50, 'frappe_non_coffee', 'taro', 'medium', 39)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (51, 'frappe_non_coffee', 'taro', 'large', 49)
+SELECT * FROM dual;
+
+INSERT ALL
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (82, 'milk tea', 'original milktea', 'small', 29)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (83, 'milk tea', 'original milktea', 'medium', 39)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (84, 'milk tea', 'original milktea', 'large', 49)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (85, 'milk tea', 'wintermelon', 'small', 29)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (86, 'milk tea', 'wintermelon', 'medium', 39)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (87, 'milk tea', 'wintermelon', 'large', 49)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (88, 'milk tea', 'hokkaido', 'small', 29)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (89, 'milk tea', 'hokkaido', 'medium', 39)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (90, 'milk tea', 'hokkaido', 'large', 49)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (91, 'milk tea', 'taro', 'small', 29)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (92, 'milk tea', 'taro', 'medium', 39)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (93, 'milk tea', 'taro', 'large', 49)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (94, 'milk tea', 'okinawa', 'small', 29)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (95, 'milk tea', 'okinawa', 'medium', 39)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (96, 'milk tea', 'okinawa', 'large', 49)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (97, 'milk tea', 'cheesecake', 'small', 29)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (98, 'milk tea', 'cheesecake', 'medium', 39)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (99, 'milk tea', 'cheesecake', 'large', 49)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (100, 'milk tea', 'chocolate', 'small', 29)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (101, 'milk tea', 'chocolate', 'medium', 39)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (102, 'milk tea', 'chocolate', 'large', 49)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (103, 'milk tea', 'cookies n cream', 'small', 29)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (104, 'milk tea', 'cookies n cream', 'medium', 39)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (105, 'milk tea', 'cookies n cream', 'large', 49)
+SELECT 1 FROM DUAL;
 
 -----------------------------------------------------------------------
 table info
@@ -330,9 +422,49 @@ INTO inventory (item_id, item_name, quantity) VALUES (42, 'frappe nc cookies n c
 INTO inventory (item_id, item_name, quantity) VALUES (43, 'frappe nc taro  powder', 100)
 SELECT 1 FROM DUAL;
 
+INSERT ALL
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (52, 'fruit tea', 'lychee', 'small', 29)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (53, 'fruit tea', 'lychee', 'medium', 39)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (54, 'fruit tea', 'lychee', 'large', 49)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (55, 'fruit tea', 'blueberry', 'small', 29)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (56, 'fruit tea', 'blueberry', 'medium', 39)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (57, 'fruit tea', 'blueberry', 'large', 49)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (58, 'fruit tea', 'watermelon', 'small', 29)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (59, 'fruit tea', 'watermelon', 'medium', 39)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (60, 'fruit tea', 'watermelon', 'large', 49)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (61, 'fruit tea', 'mango', 'small', 29)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (62, 'fruit tea', 'mango', 'medium', 39)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (63, 'fruit tea', 'mango', 'large', 49)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (64, 'fruit tea', 'orange', 'small', 29)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (65, 'fruit tea', 'orange', 'medium', 39)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (66, 'fruit tea', 'orange', 'large', 49)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (67, 'fruit tea', 'grapes', 'small', 29)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (68, 'fruit tea', 'grapes', 'medium', 39)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (69, 'fruit tea', 'grapes', 'large', 49)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (70, 'fruit tea', 'green apple', 'small', 29)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (71, 'fruit tea', 'green apple', 'medium', 39)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (72, 'fruit tea', 'green apple', 'large', 49)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (73, 'fruit tea', 'melon', 'small', 29)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (74, 'fruit tea', 'melon', 'medium', 39)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (75, 'fruit tea', 'melon', 'large', 49)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (76, 'fruit tea', 'kiwi', 'small', 29)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (77, 'fruit tea', 'kiwi', 'medium', 39)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (78, 'fruit tea', 'kiwi', 'large', 49)
+SELECT 1 FROM DUAL;
+
+INSERT INTO SALES_TABLE (item, total_price, "date", total_sales)
+VALUES ('None', 0.0, SYSDATE, 0.0);
 
 
 
+DELETE FROM SALES_TABLE WHERE ITEM = 'item_name';
+
+select * from inventory;
+--DELETE FROM SALES_TABLE WHERE ITEM = 'original blend small pearl  QTY: 1';
+--TRUNCATE TABLE SALES_TABLE;
 
 
+if error delete 
+%APPDATA%\SQL Developer\system23.1.1.345.2114\system_cache
 
+note: don't forget to commit sql
