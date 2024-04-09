@@ -469,8 +469,10 @@ if error delete
 
 note: don't forget to commit sql
 
-CREATE TABLE SALES_TABLE (
-    item VARCHAR(255),
+CREATE TABLE sales_table (
+    sale_id INT PRIMARY KEY,
+    item VARCHAR(100),
     total_price DECIMAL(10, 2),
-    "date" DATE
+    "date" DATE,
+    total_sales DECIMAL(10, 2)
 );
