@@ -468,3 +468,9 @@ if error delete
 %APPDATA%\SQL Developer\system23.1.1.345.2114\system_cache
 
 note: don't forget to commit sql
+
+CREATE TABLE SALES_TABLE (
+    item VARCHAR(255),
+    total_price DECIMAL(10, 2),
+    "date" DATE
+);
