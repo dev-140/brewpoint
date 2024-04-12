@@ -293,11 +293,13 @@ INTO inventory (item_id, item_name, quantity) VALUES (42, 'frappe nc cookies n c
 INTO inventory (item_id, item_name, quantity) VALUES (43, 'frappe nc taro  powder', 100)
 SELECT 1 FROM DUAL;
 
+
+For sales table
 INSERT INTO SALES_TABLE (item, total_price, "date", total_sales)
 VALUES ('None', 0.0, SYSDATE, 0.0);
 
 
-
+---------------------------------------------------------------
 DELETE FROM SALES_TABLE WHERE ITEM = 'item_name';
 
 select * from inventory;
