@@ -16,7 +16,7 @@ public class Request {
 	
 	public static String prodName;
 	public static int prod_ID;
-	public static int unit_price;
+	public static double unit_price;
 	public static String unit_size;
 	public static String powder;
 	public static String addons;
@@ -24,13 +24,13 @@ public class Request {
 	public static int addonsTotprice = 9;
 	
 	public static void addItem() {
-		if (unit_size == "small") {
-			unit_price = 29;
-		} else if (unit_size == "medium") {
-			unit_price = 39;
-		} else if (unit_size == "large") {
-			unit_price = 49;
-		}
+//		if (unit_size == "small") {
+//			unit_price = 29;
+//		} else if (unit_size == "medium") {
+//			unit_price = 39;
+//		} else if (unit_size == "large") {
+//			unit_price = 49;
+//		}
 		
 		if (addons != "no addons") {
 			addonsTotprice *= quantity;

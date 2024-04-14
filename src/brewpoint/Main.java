@@ -21,6 +21,9 @@ import java.awt.event.ActionEvent;
 import javax.swing.border.LineBorder;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
+
+import com.wipro.sales.main.Products;
+
 import javax.swing.JList;
 import javax.swing.JSlider;
 
@@ -47,6 +50,8 @@ public class Main extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	public static double totalPrice;
+	
+	public static String sizePrice;
 
 	/**
 	 * Launch the application.
@@ -223,7 +228,7 @@ public class Main extends JFrame {
 		// --------------------------------------------------------------------------------------------------------------------------------->
 		// --------------------------------------------------------------------------------------------------------------------------------->
 
-		JButton C_original_btn = new JButton("ORIGINAL");
+		JButton C_original_btn = new JButton(Products.getProductNameById(1));
 		C_original_btn.setForeground(Color.BLACK);
 		C_original_btn.setFont(new Font("Arial", Font.BOLD, 10));
 		C_original_btn.setBorderPainted(false);
@@ -231,12 +236,16 @@ public class Main extends JFrame {
 		C_original_btn.setBounds(161, 66, 150, 45);
 		coffee_panel.add(C_original_btn);
 		C_original_btn.addActionListener(e -> {
-			Request.prodName = "original blend";
+			Request.prodName = Products.getProductNameById(1);
 			Request.powder = "coffee original powder";
 			step1 = true;
+			Size.small = Products.getProductPrice(1);
+			Size.medium = Products.getProductPrice(2);
+			Size.large = Products.getProductPrice(3);
+			Size.main(null);
 		});
 		
-		JButton C_hazelnut_btn = new JButton("HAZELNUT");
+		JButton C_hazelnut_btn = new JButton(Products.getProductNameById(7));
 		C_hazelnut_btn.setForeground(Color.BLACK);
 		C_hazelnut_btn.setFont(new Font("Arial", Font.BOLD, 10));
 		C_hazelnut_btn.setBorderPainted(false);
@@ -244,12 +253,12 @@ public class Main extends JFrame {
 		C_hazelnut_btn.setBounds(161, 119, 150, 45);
 		coffee_panel.add(C_hazelnut_btn);
 		C_hazelnut_btn.addActionListener(e -> {
-			Request.prodName = "hazelnut espresso";
+			Request.prodName = Products.getProductNameById(7);
 			Request.powder = "coffee hazelnut powder";
 			step1 = true;
 		});
 		
-		JButton C_machiato_btn = new JButton("MACHIATO");
+		JButton C_machiato_btn = new JButton(Products.getProductNameById(13));
 		C_machiato_btn.setForeground(Color.BLACK);
 		C_machiato_btn.setFont(new Font("Arial", Font.BOLD, 10));
 		C_machiato_btn.setBorderPainted(false);
@@ -257,12 +266,12 @@ public class Main extends JFrame {
 		C_machiato_btn.setBounds(161, 175, 150, 45);
 		coffee_panel.add(C_machiato_btn);
 		C_machiato_btn.addActionListener(e -> {
-			Request.prodName = "caramel machiato";
+			Request.prodName = Products.getProductNameById(13);
 			Request.powder = "coffee machiato powder";
 			step1 = true;
 		});
 		
-		JButton C_americano_btn = new JButton("AMERICANO");
+		JButton C_americano_btn = new JButton(Products.getProductNameById(4));
 		C_americano_btn.setForeground(Color.BLACK);
 		C_americano_btn.setFont(new Font("Arial", Font.BOLD, 10));
 		C_americano_btn.setBorderPainted(false);
@@ -270,12 +279,12 @@ public class Main extends JFrame {
 		C_americano_btn.setBounds(321, 66, 150, 45);
 		coffee_panel.add(C_americano_btn);
 		C_americano_btn.addActionListener(e -> {
-			Request.prodName = "cafe americano";
+			Request.prodName = Products.getProductNameById(4);
 			Request.powder = "coffee americano powder";
 			step1 = true;
 		});
 		
-		JButton C_mocha_btn = new JButton("MOCHA");
+		JButton C_mocha_btn = new JButton(Products.getProductNameById(10));
 		C_mocha_btn.setForeground(Color.BLACK);
 		C_mocha_btn.setFont(new Font("Arial", Font.BOLD, 10));
 		C_mocha_btn.setBorderPainted(false);
@@ -283,12 +292,12 @@ public class Main extends JFrame {
 		C_mocha_btn.setBounds(321, 119, 150, 45);
 		coffee_panel.add(C_mocha_btn);
 		C_mocha_btn.addActionListener(e -> {
-			Request.prodName = "mocha latte";
+			Request.prodName = Products.getProductNameById(10);
 			Request.powder = "coffee mocha powder";
 			step1 = true;
 		});
 		
-		JButton C_vanilla_btn = new JButton("VANILLA");
+		JButton C_vanilla_btn = new JButton(Products.getProductNameById(16));
 		C_vanilla_btn.setForeground(Color.BLACK);
 		C_vanilla_btn.setFont(new Font("Arial", Font.BOLD, 10));
 		C_vanilla_btn.setBorderPainted(false);
@@ -296,7 +305,7 @@ public class Main extends JFrame {
 		C_vanilla_btn.setBounds(321, 175, 150, 45);
 		coffee_panel.add(C_vanilla_btn);
 		C_vanilla_btn.addActionListener(e -> {
-			Request.prodName = "french vannila";
+			Request.prodName = Products.getProductNameById(16);
 			Request.powder = "coffee vanilla powder";
 			step1 = true;
 		});
@@ -316,7 +325,7 @@ public class Main extends JFrame {
 		// --------- milktea options btn --------------------------------------------------------------------------------------------------->
 		// --------------------------------------------------------------------------------------------------------------------------------->
 		// --------------------------------------------------------------------------------------------------------------------------------->
-		JButton M_original_btn = new JButton("ORIGINAL");
+		JButton M_original_btn = new JButton(Products.getProductNameById(82));
 		M_original_btn.setForeground(Color.BLACK);
 		M_original_btn.setFont(new Font("Arial", Font.BOLD, 10));
 		M_original_btn.setBorderPainted(false);
@@ -324,12 +333,12 @@ public class Main extends JFrame {
 		M_original_btn.setBounds(109, 65, 195, 45);
 		milk_panel.add(M_original_btn);
 		M_original_btn.addActionListener(e -> {
-		    Request.prodName = "original milktea";
+		    Request.prodName = Products.getProductNameById(82);
 		    Request.powder = "milk original powder";
 		    step1 = true;
 		});
 
-		JButton M_hokkaido_btn = new JButton("HOKKAIDO");
+		JButton M_hokkaido_btn = new JButton(Products.getProductNameById(88));
 		M_hokkaido_btn.setForeground(Color.BLACK);
 		M_hokkaido_btn.setFont(new Font("Arial", Font.BOLD, 10));
 		M_hokkaido_btn.setBorderPainted(false);
@@ -337,12 +346,12 @@ public class Main extends JFrame {
 		M_hokkaido_btn.setBounds(109, 121, 195, 45);
 		milk_panel.add(M_hokkaido_btn);
 		M_hokkaido_btn.addActionListener(e -> {
-		    Request.prodName = "hokkaido milktea";
+		    Request.prodName = Products.getProductNameById(88);
 		    Request.powder = "milk hokkaido powder";
 		    step1 = true;
 		});
 
-		JButton M_okinawa_btn = new JButton("OKINAWA");
+		JButton M_okinawa_btn = new JButton(Products.getProductNameById(94));
 		M_okinawa_btn.setForeground(Color.BLACK);
 		M_okinawa_btn.setFont(new Font("Arial", Font.BOLD, 10));
 		M_okinawa_btn.setBorderPainted(false);
@@ -350,12 +359,12 @@ public class Main extends JFrame {
 		M_okinawa_btn.setBounds(109, 177, 195, 45);
 		milk_panel.add(M_okinawa_btn);
 		M_okinawa_btn.addActionListener(e -> {
-		    Request.prodName = "okinawa milktea";
+		    Request.prodName =Products.getProductNameById(94);
 		    Request.powder = "milk okinawa powder";
 		    step1 = true;
 		});
 
-		JButton M_winM_btn = new JButton("WINTER MELON");
+		JButton M_winM_btn = new JButton(Products.getProductNameById(85));
 		M_winM_btn.setForeground(Color.BLACK);
 		M_winM_btn.setFont(new Font("Arial", Font.BOLD, 10));
 		M_winM_btn.setBorderPainted(false);
@@ -363,12 +372,12 @@ public class Main extends JFrame {
 		M_winM_btn.setBounds(314, 65, 195, 45);
 		milk_panel.add(M_winM_btn);
 		M_winM_btn.addActionListener(e -> {
-		    Request.prodName = "wintermelon milktea";
+		    Request.prodName = Products.getProductNameById(85);
 		    Request.powder = "milk wintermelon powder";
 		    step1 = true;
 		});
 
-		JButton M_taro_btn = new JButton("TARO");
+		JButton M_taro_btn = new JButton(Products.getProductNameById(91));
 		M_taro_btn.setForeground(Color.BLACK);
 		M_taro_btn.setFont(new Font("Arial", Font.BOLD, 10));
 		M_taro_btn.setBorderPainted(false);
@@ -376,12 +385,12 @@ public class Main extends JFrame {
 		M_taro_btn.setBounds(314, 121, 195, 45);
 		milk_panel.add(M_taro_btn);
 		M_taro_btn.addActionListener(e -> {
-		    Request.prodName = "taro milktea";
+		    Request.prodName = Products.getProductNameById(91);
 		    Request.powder = "milk taro powder";
 		    step1 = true;
 		});
 
-		JButton M_ccake_btn = new JButton("CHEESE CAKE");
+		JButton M_ccake_btn = new JButton(Products.getProductNameById(97));
 		M_ccake_btn.setForeground(Color.BLACK);
 		M_ccake_btn.setFont(new Font("Arial", Font.BOLD, 10));
 		M_ccake_btn.setBorderPainted(false);
@@ -389,12 +398,12 @@ public class Main extends JFrame {
 		M_ccake_btn.setBounds(314, 177, 195, 45);
 		milk_panel.add(M_ccake_btn);
 		M_ccake_btn.addActionListener(e -> {
-		    Request.prodName = "cheesecake milktea";
+		    Request.prodName = Products.getProductNameById(97);
 		    Request.powder = "milk cheesecake powder";
 		    step1 = true;
 		});
 
-		JButton M_choco_btn = new JButton("CHOCOLATE");
+		JButton M_choco_btn = new JButton(Products.getProductNameById(100));
 		M_choco_btn.setForeground(Color.BLACK);
 		M_choco_btn.setFont(new Font("Arial", Font.BOLD, 10));
 		M_choco_btn.setBorderPainted(false);
@@ -402,12 +411,12 @@ public class Main extends JFrame {
 		M_choco_btn.setBounds(109, 233, 195, 45);
 		milk_panel.add(M_choco_btn);
 		M_choco_btn.addActionListener(e -> {
-		    Request.prodName = "chocolate milktea";
+		    Request.prodName = Products.getProductNameById(100);
 		    Request.powder = "milk chocolate powder";
 		    step1 = true;
 		});
 
-		JButton M_straw_btn = new JButton("STRAWBERRY");
+		JButton M_straw_btn = new JButton(Products.getProductNameById(19));
 		M_straw_btn.setForeground(Color.BLACK);
 		M_straw_btn.setFont(new Font("Arial", Font.BOLD, 10));
 		M_straw_btn.setBorderPainted(false);
@@ -415,12 +424,12 @@ public class Main extends JFrame {
 		M_straw_btn.setBounds(314, 233, 195, 45);
 		milk_panel.add(M_straw_btn);
 		M_straw_btn.addActionListener(e -> {
-		    Request.prodName = "strawberry milktea";
+		    Request.prodName = Products.getProductNameById(19);
 		    Request.powder = "milk strawberry powder";
 		    step1 = true;
 		});
 
-		JButton M_ccream_btn = new JButton("COOKIES & CREAM");
+		JButton M_ccream_btn = new JButton(Products.getProductNameById(103));
 		M_ccream_btn.setForeground(Color.BLACK);
 		M_ccream_btn.setFont(new Font("Arial", Font.BOLD, 10));
 		M_ccream_btn.setBorderPainted(false);
@@ -428,7 +437,7 @@ public class Main extends JFrame {
 		M_ccream_btn.setBounds(109, 289, 195, 45);
 		milk_panel.add(M_ccream_btn);
 		M_ccream_btn.addActionListener(e -> {
-		    Request.prodName = "cookies n cream milktea";
+		    Request.prodName = Products.getProductNameById(103);
 		    Request.powder = "milk cookies n cream powder";
 		    step1 = true;
 		});
@@ -450,7 +459,7 @@ public class Main extends JFrame {
 		// --------------------------------------------------------------------------------------------------------------------------------->
 		// --------------------------------------------------------------------------------------------------------------------------------->
 		
-		JButton F_straw_btn = new JButton("STRAWBERRY");
+		JButton F_straw_btn = new JButton(Products.getProductNameById(79));
 		F_straw_btn.setForeground(Color.BLACK);
 		F_straw_btn.setFont(new Font("Arial", Font.BOLD, 10));
 		F_straw_btn.setBorderPainted(false);
@@ -458,12 +467,12 @@ public class Main extends JFrame {
 		F_straw_btn.setBounds(153, 67, 161, 45);
 		fruit_panel.add(F_straw_btn);
 		F_straw_btn.addActionListener(e -> {
-		    Request.prodName = "strawberry fruit tea";
+		    Request.prodName = Products.getProductNameById(79);
 		    Request.powder = "fruit strawberry powder";
 		    step1 = true;
 		});
 
-		JButton F_lychee_btn = new JButton("LYCHEE");
+		JButton F_lychee_btn = new JButton(Products.getProductNameById(52));
 		F_lychee_btn.setForeground(Color.BLACK);
 		F_lychee_btn.setFont(new Font("Arial", Font.BOLD, 10));
 		F_lychee_btn.setBorderPainted(false);
@@ -471,12 +480,12 @@ public class Main extends JFrame {
 		F_lychee_btn.setBounds(327, 67, 161, 45);
 		fruit_panel.add(F_lychee_btn);
 		F_lychee_btn.addActionListener(e -> {
-		    Request.prodName = "lychee fruit tea";
+		    Request.prodName = Products.getProductNameById(52);
 		    Request.powder = "fruit lychee powder";
 		    step1 = true;
 		});
 
-		JButton F_watermelon_btn = new JButton("WATERMELON");
+		JButton F_watermelon_btn = new JButton(Products.getProductNameById(58));
 		F_watermelon_btn.setForeground(Color.BLACK);
 		F_watermelon_btn.setFont(new Font("Arial", Font.BOLD, 10));
 		F_watermelon_btn.setBorderPainted(false);
@@ -484,12 +493,12 @@ public class Main extends JFrame {
 		F_watermelon_btn.setBounds(327, 123, 161, 45);
 		fruit_panel.add(F_watermelon_btn);
 		F_watermelon_btn.addActionListener(e -> {
-		    Request.prodName = "watermelon fruit tea";
+		    Request.prodName = Products.getProductNameById(58);
 		    Request.powder = "fruit wintermerlon powder";
 		    step1 = true;
 		});
 
-		JButton F_blue_btn = new JButton("BLUEBERRY");
+		JButton F_blue_btn = new JButton(Products.getProductNameById(55));
 		F_blue_btn.setForeground(Color.BLACK);
 		F_blue_btn.setFont(new Font("Arial", Font.BOLD, 10));
 		F_blue_btn.setBorderPainted(false);
@@ -497,12 +506,12 @@ public class Main extends JFrame {
 		F_blue_btn.setBounds(153, 123, 161, 45);
 		fruit_panel.add(F_blue_btn);
 		F_blue_btn.addActionListener(e -> {
-		    Request.prodName = "blueberry fruit tea";
+		    Request.prodName = Products.getProductNameById(55);
 		    Request.powder = "fruit blueberry powder";
 		    step1 = true;
 		});
 
-		JButton F_orange_btn = new JButton("ORANGE");
+		JButton F_orange_btn = new JButton(Products.getProductNameById(64));
 		F_orange_btn.setForeground(Color.BLACK);
 		F_orange_btn.setFont(new Font("Arial", Font.BOLD, 10));
 		F_orange_btn.setBorderPainted(false);
@@ -510,12 +519,12 @@ public class Main extends JFrame {
 		F_orange_btn.setBounds(327, 179, 161, 45);
 		fruit_panel.add(F_orange_btn);
 		F_orange_btn.addActionListener(e -> {
-		    Request.prodName = "orange fruit tea";
+		    Request.prodName = Products.getProductNameById(64);
 		    Request.powder = "fruit orange powder";
 		    step1 = true;
 		});
 
-		JButton F_mango_btn = new JButton("MANGO");
+		JButton F_mango_btn = new JButton(Products.getProductNameById(61));
 		F_mango_btn.setForeground(Color.BLACK);
 		F_mango_btn.setFont(new Font("Arial", Font.BOLD, 10));
 		F_mango_btn.setBorderPainted(false);
@@ -528,7 +537,7 @@ public class Main extends JFrame {
 		    step1 = true;
 		});
 
-		JButton F_gapple_btn = new JButton("GREEN APPLE");
+		JButton F_gapple_btn = new JButton(Products.getProductNameById(70));
 		F_gapple_btn.setForeground(Color.BLACK);
 		F_gapple_btn.setFont(new Font("Arial", Font.BOLD, 10));
 		F_gapple_btn.setBorderPainted(false);
@@ -536,12 +545,12 @@ public class Main extends JFrame {
 		F_gapple_btn.setBounds(327, 236, 161, 45);
 		fruit_panel.add(F_gapple_btn);
 		F_gapple_btn.addActionListener(e -> {
-		    Request.prodName = "green apple fruit tea";
+		    Request.prodName = Products.getProductNameById(70);
 		    Request.powder = "fruit green apple powder";
 		    step1 = true;
 		});
 
-		JButton F_grape_btn = new JButton("GRAPES");
+		JButton F_grape_btn = new JButton(Products.getProductNameById(67));
 		F_grape_btn.setForeground(Color.BLACK);
 		F_grape_btn.setFont(new Font("Arial", Font.BOLD, 10));
 		F_grape_btn.setBorderPainted(false);
@@ -549,12 +558,12 @@ public class Main extends JFrame {
 		F_grape_btn.setBounds(153, 236, 161, 45);
 		fruit_panel.add(F_grape_btn);
 		F_grape_btn.addActionListener(e -> {
-		    Request.prodName = "grapes fruit tea";
+		    Request.prodName = Products.getProductNameById(67);
 		    Request.powder = "fruit grapes powder";
 		    step1 = true;
 		});
 
-		JButton F_kiwi_btn = new JButton("KIWI");
+		JButton F_kiwi_btn = new JButton(Products.getProductNameById(76));
 		F_kiwi_btn.setForeground(Color.BLACK);
 		F_kiwi_btn.setFont(new Font("Arial", Font.BOLD, 10));
 		F_kiwi_btn.setBorderPainted(false);
@@ -562,12 +571,12 @@ public class Main extends JFrame {
 		F_kiwi_btn.setBounds(327, 292, 161, 45);
 		fruit_panel.add(F_kiwi_btn);
 		F_kiwi_btn.addActionListener(e -> {
-		    Request.prodName = "kiwi fruit tea";
+		    Request.prodName = Products.getProductNameById(76);
 		    Request.powder = "fruit kiwi powder";
 		    step1 = true;
 		});
 
-		JButton F_melon_btn = new JButton("MELON");
+		JButton F_melon_btn = new JButton(Products.getProductNameById(73));
 		F_melon_btn.setForeground(Color.BLACK);
 		F_melon_btn.setFont(new Font("Arial", Font.BOLD, 10));
 		F_melon_btn.setBorderPainted(false);
@@ -575,7 +584,7 @@ public class Main extends JFrame {
 		F_melon_btn.setBounds(153, 292, 161, 45);
 		fruit_panel.add(F_melon_btn);
 		F_melon_btn.addActionListener(e -> {
-		    Request.prodName = "melon fruit tea";
+		    Request.prodName = Products.getProductNameById(73);
 		    Request.powder = "fruit melon powder";
 		    step1 = true;
 		});
@@ -597,7 +606,7 @@ public class Main extends JFrame {
 		// --------------------------------------------------------------------------------------------------------------------------------->
 		// --------------------------------------------------------------------------------------------------------------------------------->
 		
-		JButton FP_cjava_btn = new JButton("CHOCO JAVA");
+		JButton FP_cjava_btn = new JButton(Products.getProductNameById(22));
 		FP_cjava_btn.setForeground(Color.BLACK);
 		FP_cjava_btn.setFont(new Font("Arial", Font.BOLD, 10));
 		FP_cjava_btn.setBorderPainted(false);
@@ -605,12 +614,12 @@ public class Main extends JFrame {
 		FP_cjava_btn.setBounds(146, 82, 147, 37);
 		frappe_panel.add(FP_cjava_btn);
 		FP_cjava_btn.addActionListener(e -> {
-		    Request.prodName = "choco java frappe";
+		    Request.prodName = Products.getProductNameById(22);
 		    Request.powder = "frappe c choco java powder";
 		    step1 = true;
 		});
 
-		JButton FP_strawcream_btn = new JButton("STRAWBERRY CREAM");
+		JButton FP_strawcream_btn = new JButton(Products.getProductNameById(37));
 		FP_strawcream_btn.setForeground(Color.BLACK);
 		FP_strawcream_btn.setFont(new Font("Arial", Font.BOLD, 10));
 		FP_strawcream_btn.setBorderPainted(false);
@@ -618,12 +627,12 @@ public class Main extends JFrame {
 		FP_strawcream_btn.setBounds(334, 82, 147, 37);
 		frappe_panel.add(FP_strawcream_btn);
 		FP_strawcream_btn.addActionListener(e -> {
-		    Request.prodName = "strawberry cream frappe";
+		    Request.prodName = Products.getProductNameById(37);
 		    Request.powder = "frappe nc strawberry cream powder";
 		    step1 = true;
 		});
 
-		JButton FP_ccake_btn = new JButton("CHEESECAKE CREAM");
+		JButton FP_ccake_btn = new JButton(Products.getProductNameById(40));
 		FP_ccake_btn.setForeground(Color.BLACK);
 		FP_ccake_btn.setFont(new Font("Arial", Font.BOLD, 10));
 		FP_ccake_btn.setBorderPainted(false);
@@ -631,12 +640,12 @@ public class Main extends JFrame {
 		FP_ccake_btn.setBounds(334, 125, 147, 37);
 		frappe_panel.add(FP_ccake_btn);
 		FP_ccake_btn.addActionListener(e -> {
-		    Request.prodName = "cheesecake cream frappe";
+		    Request.prodName = Products.getProductNameById(40);
 		    Request.powder = "frappe nc cheescake cream powder";
 		    step1 = true;
 		});
 
-		JButton FP_chazel_btn = new JButton("CHOCO HAZELNUT");
+		JButton FP_chazel_btn = new JButton(Products.getProductNameById(25));
 		FP_chazel_btn.setForeground(Color.BLACK);
 		FP_chazel_btn.setFont(new Font("Arial", Font.BOLD, 10));
 		FP_chazel_btn.setBorderPainted(false);
@@ -644,12 +653,12 @@ public class Main extends JFrame {
 		FP_chazel_btn.setBounds(146, 125, 147, 37);
 		frappe_panel.add(FP_chazel_btn);
 		FP_chazel_btn.addActionListener(e -> {
-		    Request.prodName = "choco hazelnut frappe";
+		    Request.prodName = Products.getProductNameById(25);
 		    Request.powder = "frappe c choco hazelnut powder";
 		    step1 = true;
 		});
 
-		JButton FP_chococream_btn = new JButton("CHOCOLATE CREAM");
+		JButton FP_chococream_btn = new JButton(Products.getProductNameById(43));
 		FP_chococream_btn.setForeground(Color.BLACK);
 		FP_chococream_btn.setFont(new Font("Arial", Font.BOLD, 10));
 		FP_chococream_btn.setBorderPainted(false);
@@ -657,12 +666,12 @@ public class Main extends JFrame {
 		FP_chococream_btn.setBounds(334, 167, 147, 37);
 		frappe_panel.add(FP_chococream_btn);
 		FP_chococream_btn.addActionListener(e -> {
-		    Request.prodName = "chocolate cream frappe";
+		    Request.prodName = Products.getProductNameById(43);
 		    Request.powder = "frappe nc chocolate cream powder";
 		    step1 = true;
 		});
 
-		JButton FP_vcream_btn = new JButton("VANILLA CARAMEL");
+		JButton FP_vcream_btn = new JButton(Products.getProductNameById(28));
 		FP_vcream_btn.setForeground(Color.BLACK);
 		FP_vcream_btn.setFont(new Font("Arial", Font.BOLD, 10));
 		FP_vcream_btn.setBorderPainted(false);
@@ -670,12 +679,12 @@ public class Main extends JFrame {
 		FP_vcream_btn.setBounds(146, 167, 147, 37);
 		frappe_panel.add(FP_vcream_btn);
 		FP_vcream_btn.addActionListener(e -> {
-		    Request.prodName = "vanilla caramel frappe";
+		    Request.prodName = Products.getProductNameById(28);
 		    Request.powder = "frappe c vanilla caramel powder";
 		    step1 = true;
 		});
 
-		JButton FP_scaramel_btn = new JButton("SALTED CARAMEL");
+		JButton FP_scaramel_btn = new JButton(Products.getProductNameById(31));
 		FP_scaramel_btn.setForeground(Color.BLACK);
 		FP_scaramel_btn.setFont(new Font("Arial", Font.BOLD, 10));
 		FP_scaramel_btn.setBorderPainted(false);
@@ -683,12 +692,12 @@ public class Main extends JFrame {
 		FP_scaramel_btn.setBounds(146, 209, 147, 37);
 		frappe_panel.add(FP_scaramel_btn);
 		FP_scaramel_btn.addActionListener(e -> {
-		    Request.prodName = "salted caramel frappe";
+		    Request.prodName = Products.getProductNameById(31);
 		    Request.powder = "frappe c salted caramel powder";
 		    step1 = true;
 		});
 
-		JButton FP_cookiecream_btn = new JButton("COOKIES & CREAM");
+		JButton FP_cookiecream_btn = new JButton(Products.getProductNameById(46));
 		FP_cookiecream_btn.setForeground(Color.BLACK);
 		FP_cookiecream_btn.setFont(new Font("Arial", Font.BOLD, 10));
 		FP_cookiecream_btn.setBorderPainted(false);
@@ -696,12 +705,12 @@ public class Main extends JFrame {
 		FP_cookiecream_btn.setBounds(334, 209, 147, 37);
 		frappe_panel.add(FP_cookiecream_btn);
 		FP_cookiecream_btn.addActionListener(e -> {
-		    Request.prodName = "cookies & cream frappe";
+		    Request.prodName = Products.getProductNameById(46);
 		    Request.powder = "frappe nc cookies n cream powder";
 		    step1 = true;
 		});
 
-		JButton FP_gtea_btn = new JButton("GREEN TEA CREAM");
+		JButton FP_gtea_btn = new JButton(Products.getProductNameById(34));
 		FP_gtea_btn.setForeground(Color.BLACK);
 		FP_gtea_btn.setFont(new Font("Arial", Font.BOLD, 10));
 		FP_gtea_btn.setBorderPainted(false);
@@ -709,12 +718,12 @@ public class Main extends JFrame {
 		FP_gtea_btn.setBounds(146, 251, 147, 37);
 		frappe_panel.add(FP_gtea_btn);
 		FP_gtea_btn.addActionListener(e -> {
-		    Request.prodName = "green tea cream frappe";
+		    Request.prodName = Products.getProductNameById(34);
 		    Request.powder = "frappe c green tea cream powder";
 		    step1 = true;
 		});
 
-		JButton FP_taro = new JButton("TARO");
+		JButton FP_taro = new JButton(Products.getProductNameById(49));
 		FP_taro.setForeground(Color.BLACK);
 		FP_taro.setFont(new Font("Arial", Font.BOLD, 10));
 		FP_taro.setBorderPainted(false);
@@ -722,7 +731,7 @@ public class Main extends JFrame {
 		FP_taro.setBounds(334, 251, 147, 37);
 		frappe_panel.add(FP_taro);
 		FP_taro.addActionListener(e -> {
-		    Request.prodName = "taro frappe";
+		    Request.prodName = Products.getProductNameById(49);
 		    Request.powder = "frappe nc taro powder";
 		    step1 = true;
 		});
