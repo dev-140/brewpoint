@@ -294,12 +294,9 @@ INTO inventory (item_id, item_name, quantity) VALUES (43, 'frappe nc taro  powde
 SELECT 1 FROM DUAL;
 
 
-<<<<<<< HEAD
 INSERT INTO SALES_TABLE (item, total_price, "date", total_sales)    
-=======
 For sales table
 INSERT INTO SALES_TABLE (item, total_price, "date", total_sales)
->>>>>>> 0a8d27befff6bbc343198cb9d53dd0fb9ddc4efb
 VALUES ('None', 0.0, SYSDATE, 0.0);
 
 
@@ -323,3 +320,6 @@ CREATE TABLE sales_table (
     "date" DATE,
     total_sales DECIMAL(10, 2)
 );
+
+INSERT INTO inventory (ITEM_ID, ITEM_NAME, QUANTITY)
+VALUES (43, 'no addons', 999999);

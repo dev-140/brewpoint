@@ -25,6 +25,7 @@ import javax.swing.event.ChangeListener;
 import com.wipro.sales.main.Products;
 
 import javax.swing.JList;
+import javax.swing.JOptionPane;
 import javax.swing.JSlider;
 
 
@@ -1011,17 +1012,25 @@ public class Main extends JFrame {
 		checkout_btn.setBounds(303, 324, 89, 45);
 		order_panel.add(checkout_btn);
 		checkout_btn.addActionListener(e -> {
-			if(step1 && step2 && step3 && isCheckout) {
-				Request.insertSalesData(orderListModel, totalPrice);
-
-				orderListModel.clear();
+			if(step1 && step2 && step3) {
 				Request.updateDB();
-				Request.orderList.clear();
 				total_pricelbl.setText("0");
+				if (Request.updateDb && Request.updateDb1 && Request.updateDb2 && Request.updateDb3 && Request.updateDb4) {
+					Request.insertSalesData(orderListModel, totalPrice);
+				} else {
+					JOptionPane.showMessageDialog(null, "Please re-stock");
+				}
 				step1 = false;
 				step2 = false;
 				step3 = false;
 				isCheckout = false;
+				Request.updateDb = false;
+				Request.updateDb1 = false;
+				Request.updateDb2 = false;
+				Request.updateDb3 = false;
+				Request.updateDb4 = false;
+				orderListModel.clear();
+				Request.orderList.clear();
 			} else {
 				System.out.println("Select a product");
 			}
@@ -1050,6 +1059,7 @@ public class Main extends JFrame {
 			step1 = false;
 			step2 = false;
 			step3 = false;
+			Request.updateDb = false;
 		});
 		
 		size_panel.setBorder(new LineBorder(new Color(0, 0, 0)));

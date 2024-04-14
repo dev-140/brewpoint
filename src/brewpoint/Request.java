@@ -10,6 +10,7 @@ import java.util.Date;
 
 import javax.swing.DefaultListModel;
 import javax.swing.JList;
+import javax.swing.JOptionPane;
 
 public class Request {
 	public static ArrayList<String[]> orderList = new ArrayList<>();
@@ -22,6 +23,11 @@ public class Request {
 	public static String addons;
 	public static int quantity;
 	public static int addonsTotprice = 9;
+    public static boolean updateDb = false;
+    public static boolean updateDb1 = false;
+    public static boolean updateDb2 = false;
+    public static boolean updateDb3 = false;
+    public static boolean updateDb4 = false;
 	
 	public static void addItem() {		
 		if(Main.step1 && Main.step2 && Main.step3) {
@@ -52,10 +58,6 @@ public class Request {
             
             Main.total_pricelbl.setText(totalPrice+"");
             Main.slider.setValue(1);
-            // Main.step1 = false;
-            // Main.step2 = false;
-            // Main.step3 = false;
-            Main.isCheckout = true;
             addonsTotprice = 9;
         } else {
             System.out.println("Unable to checkout");
@@ -63,6 +65,19 @@ public class Request {
 	}
 	
 	public static void updateDB() {
+        for (String[] order : orderList) {
+		    String powder = order[0];
+		    String addons = order[1];
+		    int quantity = Integer.parseInt(order[2]);
+
+            isQuantityAvailable1(powder, quantity);
+            isQuantityAvailable2(addons, quantity);
+            isQuantityAvailable3("cup", quantity);
+            isQuantityAvailable4("sugar", quantity);
+            isQuantityAvailable5("straw", quantity);
+		}
+
+        if(updateDb && updateDb1 && updateDb2 && updateDb3 && updateDb4)
 		for (String[] order : orderList) {
 		    String powder = order[0];
 		    String addons = order[1];
@@ -92,7 +107,8 @@ public class Request {
                     
                     int newQuantity = currentQuantity - quantity;
                     if (newQuantity < 0) {
-                        System.out.println("Error: Ordered quantity exceeds available quantity.");
+                        System.out.println("Error: Item not found in inventory. " + itemName);
+                        updateDb = false;
                         return;
                     }
                     
@@ -102,9 +118,10 @@ public class Request {
                         updateStmt.setString(2, itemName);
                         updateStmt.executeUpdate();
                         System.out.println("Inventory updated for item: " + itemName);
+                        updateDb = true;
                     }
                 } else {
-                    System.out.println("Error: Item not found in inventory.");
+                    System.out.println("Error: Item not found in inventory. " + itemName);
                 }
             }
         } catch (SQLException e) {
@@ -130,6 +147,7 @@ public class Request {
                     int newQuantity = currentQuantity - quantity;
                     if (newQuantity < 0) {
                         System.out.println("Error: Ordered quantity exceeds available quantity.");
+                        updateDb1 = false;
                         return;
                     }
                     
@@ -139,9 +157,10 @@ public class Request {
                         updateStmt.setString(2, itemName);
                         updateStmt.executeUpdate();
                         System.out.println("Inventory updated for item: " + itemName);
+                        updateDb1 = true;
                     }
                 } else {
-                    System.out.println("Error: Item not found in inventory.");
+                    System.out.println("Error: Item not found in inventory. " + itemName);
                 }
             }
         } catch (SQLException e) {
@@ -166,7 +185,8 @@ public class Request {
                     
                     int newQuantity = currentQuantity - quantity;
                     if (newQuantity < 0) {
-                        System.out.println("Error: Ordered quantity exceeds available quantity.");
+                        System.out.println("Error: Item not found in inventory. " + itemName);
+                        updateDb2 = false;
                         return;
                     }
                     
@@ -176,9 +196,10 @@ public class Request {
                         updateStmt.setString(2, itemName);
                         updateStmt.executeUpdate();
                         System.out.println("Inventory updated for item: " + itemName);
+                        updateDb2 = true;
                     }
                 } else {
-                    System.out.println("Error: Item not found in inventory.");
+                    System.out.println("Error: Item not found in inventory. " + itemName);
                 }
             }
         } catch (SQLException e) {
@@ -204,7 +225,8 @@ public class Request {
                     // Calculate new quantity after subtracting ordered quantity
                     int newQuantity = currentQuantity - quantity;
                     if (newQuantity < 0) {
-                        System.out.println("Error: Ordered quantity exceeds available quantity.");
+                        System.out.println("Error: Item not found in inventory. " + itemName);
+                        updateDb3 = false;
                         return;
                     }
                     
@@ -214,9 +236,10 @@ public class Request {
                         updateStmt.setString(2, itemName);
                         updateStmt.executeUpdate();
                         System.out.println("Inventory updated for item: " + itemName);
+                        updateDb3 = true;
                     }
                 } else {
-                    System.out.println("Error: Item not found in inventory.");
+                    System.out.println("Error: Item not found in inventory." + itemName);
                 }
             }
         } catch (SQLException e) {
@@ -241,7 +264,8 @@ public class Request {
                     
                     int newQuantity = currentQuantity - quantity;
                     if (newQuantity < 0) {
-                        System.out.println("Error: Ordered quantity exceeds available quantity.");
+                        System.out.println("Error: Item not found in inventory. " + itemName);
+                        updateDb4 = false;
                         return;
                     }
                     
@@ -251,9 +275,10 @@ public class Request {
                         updateStmt.setString(2, itemName);
                         updateStmt.executeUpdate();
                         System.out.println("Inventory updated for item: " + itemName);
+                        updateDb4 = true;
                     }
                 } else {
-                    System.out.println("Error: Item not found in inventory.");
+                    System.out.println("Error: Item not found in inventory. " + itemName);
                 }
             }
         } catch (SQLException e) {
@@ -310,5 +335,65 @@ public class Request {
 	        System.out.println("Error updating total sales: " + e.getMessage());
 	    }
 	}
+
+    // check quantity
+    private static boolean isQuantityAvailable(String itemName, int quantity) {
+        try (Connection con = DBUtil.getDBConnection()) {
+            if (con == null) {
+                System.out.println("Database connection is not available.");
+                return false;
+            }
+            
+            String sql = "SELECT quantity FROM inventory WHERE item_name = ?";
+            try (PreparedStatement stmt = con.prepareStatement(sql)) {
+                stmt.setString(1, itemName);
+                ResultSet rs = stmt.executeQuery();
+                if (rs.next()) {
+                    int currentQuantity = rs.getInt("quantity");
+                    
+                    int newQuantity = currentQuantity - quantity;
+                    if (newQuantity < 0) {
+                        System.out.println("Error: Ordered quantity exceeds available quantity.");
+                        JOptionPane.showMessageDialog(null, itemName + " quantity exceeds available quantity");
+                        return false;
+                    } else {
+                        return true;
+                    }
+                } else {
+                    System.out.println("Error: Item not found in inventory. " + itemName);
+                    return true;
+                }
+            }
+        } catch (SQLException e) {
+            System.out.println("Error occurred while fetching data from database.");
+            e.printStackTrace();
+            return false;
+        }
+    }
+    
+    private static boolean isQuantityAvailable1(String itemName, int quantity) {
+        updateDb = isQuantityAvailable(itemName, quantity);
+        return isQuantityAvailable(itemName, quantity);
+    }
+    
+    private static boolean isQuantityAvailable2(String itemName, int quantity) {
+        updateDb1 = isQuantityAvailable(itemName, quantity);
+        return isQuantityAvailable(itemName, quantity);
+    }
+    
+    private static boolean isQuantityAvailable3(String itemName, int quantity) {
+        updateDb2 = isQuantityAvailable(itemName, quantity);
+        return isQuantityAvailable(itemName, quantity);
+    }
+    
+    private static boolean isQuantityAvailable4(String itemName, int quantity) {
+        updateDb3 = isQuantityAvailable(itemName, quantity);
+        return isQuantityAvailable(itemName, quantity);
+    }
+    
+    private static boolean isQuantityAvailable5(String itemName, int quantity) {
+        updateDb4 = isQuantityAvailable(itemName, quantity);
+        return isQuantityAvailable(itemName, quantity);
+    }
 }
 
