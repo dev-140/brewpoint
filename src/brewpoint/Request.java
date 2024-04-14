@@ -23,47 +23,43 @@ public class Request {
 	public static int quantity;
 	public static int addonsTotprice = 9;
 	
-	public static void addItem() {
-//		if (unit_size == "small") {
-//			unit_price = 29;
-//		} else if (unit_size == "medium") {
-//			unit_price = 39;
-//		} else if (unit_size == "large") {
-//			unit_price = 49;
-//		}
-		
-		if (addons != "no addons") {
-			addonsTotprice *= quantity;
-		} else {
-			addonsTotprice = 0;
-		}
-		
-		
-		 String[] order = new String[]{powder, addons, String.valueOf(quantity)};
-         orderList.add(order);
-		
-		if (Main.step1 && Main.step2 && Main.step3) {
-			Main.orderListModel.addElement(prodName + " " + unit_size + " " + addons + " " + " QTY: " + quantity + " - P" + ((unit_price*quantity)+addonsTotprice)+"");
-		}
-		
-		double totalPrice = 0.0;
-
-		for (int i = 0; i < Main.orderListModel.size(); i++) {
-		    String element = Main.orderListModel.getElementAt(i);
-		    String priceString = element.substring(element.lastIndexOf("P") + 1);
-		    double price = Double.parseDouble(priceString);
-		    totalPrice += price;
-		    
-		    Main.totalPrice = Double.parseDouble(totalPrice+"");
-		}
-		
-		Main.total_pricelbl.setText(totalPrice+"");
-		Main.slider.setValue(1);
-		Main.step1 = false;
-		Main.step2 = false;
-		Main.step3 = false;
-		addonsTotprice = 9;
-		
+	public static void addItem() {		
+		if(Main.step1 && Main.step2 && Main.step3) {
+            if (addons != "no addons") {
+                addonsTotprice *= quantity;
+            } else {
+                addonsTotprice = 0;
+            }
+            
+            
+             String[] order = new String[]{powder, addons, String.valueOf(quantity)};
+             orderList.add(order);
+            
+            if (Main.step1 && Main.step2 && Main.step3) {
+                Main.orderListModel.addElement(prodName + " " + unit_size + " " + addons + " " + " QTY: " + quantity + " - P" + ((unit_price*quantity)+addonsTotprice)+"");
+            }
+            
+            double totalPrice = 0.0;
+    
+            for (int i = 0; i < Main.orderListModel.size(); i++) {
+                String element = Main.orderListModel.getElementAt(i);
+                String priceString = element.substring(element.lastIndexOf("P") + 1);
+                double price = Double.parseDouble(priceString);
+                totalPrice += price;
+                
+                Main.totalPrice = Double.parseDouble(totalPrice+"");
+            }
+            
+            Main.total_pricelbl.setText(totalPrice+"");
+            Main.slider.setValue(1);
+            // Main.step1 = false;
+            // Main.step2 = false;
+            // Main.step3 = false;
+            Main.isCheckout = true;
+            addonsTotprice = 9;
+        } else {
+            System.out.println("Unable to checkout");
+        }
 	}
 	
 	public static void updateDB() {
@@ -78,7 +74,6 @@ public class Request {
 		    updateDatabaseInventory3("sugar", quantity);
 		    updateDatabaseInventory4("straw", quantity);
 		}
-		
 	}
 	
 	private static void updateDatabaseInventory(String itemName, int quantity) {

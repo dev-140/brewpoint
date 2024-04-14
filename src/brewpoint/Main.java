@@ -42,6 +42,7 @@ public class Main extends JFrame {
 	static boolean step1 = false;
 	static boolean step2 = false;
 	static boolean step3 = false;
+	static boolean isCheckout = false;
 	static JSlider slider = new JSlider();
 	static JPanel qty_panel = new JPanel();
 	static JLabel total_pricelbl = new JLabel("0");
@@ -52,6 +53,7 @@ public class Main extends JFrame {
 	public static double totalPrice;
 	
 	public static String sizePrice;
+	static Main frame;
 
 	/**
 	 * Launch the application.
@@ -60,7 +62,7 @@ public class Main extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Main frame = new Main();
+					frame = new Main();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -85,8 +87,8 @@ public class Main extends JFrame {
 		addon_panel.setBorder(new LineBorder(new Color(0, 0, 0)));
 		addon_panel.setVisible(false);
 		order_panel.setVisible(false);
-		size_panel.setVisible(false);
 		qty_panel.setVisible(false);
+		size_panel.setVisible(false);
 	}
 	
 	public static void showPanel(JPanel panelActive) {
@@ -96,7 +98,7 @@ public class Main extends JFrame {
 	
 	public Main() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1067, 644);
+		setBounds(100, 100, 1067, 597);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(255, 255, 255));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -109,7 +111,6 @@ public class Main extends JFrame {
 		showPanel(coffee_panel);
 	    addon_panel.setVisible(true);
 		order_panel.setVisible(true);
-		size_panel.setVisible(true);
 		qty_panel.setVisible(true);
 		
 		JLabel header = new JLabel("8 AM BrewPoint");
@@ -122,7 +123,6 @@ public class Main extends JFrame {
 		    showPanel(coffee_panel);
 		    addon_panel.setVisible(true);
 			order_panel.setVisible(true);
-			size_panel.setVisible(true);
 			qty_panel.setVisible(true);
 		});
 		coffee_btn.setForeground(new Color(0, 0, 0));
@@ -138,7 +138,6 @@ public class Main extends JFrame {
 			showPanel(milk_panel);
 			addon_panel.setVisible(true);
 			order_panel.setVisible(true);
-			size_panel.setVisible(true);
 			qty_panel.setVisible(true);
 		});
 		milktea_btn.setForeground(Color.BLACK);
@@ -154,7 +153,6 @@ public class Main extends JFrame {
 			showPanel(fruit_panel);
 			addon_panel.setVisible(true);
 			order_panel.setVisible(true);
-			size_panel.setVisible(true);
 			qty_panel.setVisible(true);
 		});
 		fruittea_btn.setForeground(Color.BLACK);
@@ -170,7 +168,6 @@ public class Main extends JFrame {
 			showPanel(frappe_panel);
 			addon_panel.setVisible(true);
 			order_panel.setVisible(true);
-			size_panel.setVisible(true);
 			qty_panel.setVisible(true);
 		});
 		frappe_btn.setForeground(Color.BLACK);
@@ -186,7 +183,7 @@ public class Main extends JFrame {
 		inventory_btn.setFont(new Font("Arial", Font.BOLD, 10));
 		inventory_btn.setBorderPainted(false);
 		inventory_btn.setBackground(Color.LIGHT_GRAY);
-		inventory_btn.setBounds(10, 109, 188, 45);
+		inventory_btn.setBounds(10, 109, 123, 45);
 		contentPane.add(inventory_btn);
 		inventory_btn.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		inventory_btn.addActionListener(new ActionListener() {
@@ -207,7 +204,7 @@ public class Main extends JFrame {
 		sales_btn.setFont(new Font("Arial", Font.BOLD, 10));
 		sales_btn.setBorderPainted(false);
 		sales_btn.setBackground(Color.LIGHT_GRAY);
-		sales_btn.setBounds(208, 109, 222, 45);
+		sales_btn.setBounds(143, 109, 143, 45);
 		contentPane.add(sales_btn);
 		sales_btn.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		
@@ -253,11 +250,15 @@ public class Main extends JFrame {
 		C_hazelnut_btn.setBounds(161, 119, 150, 45);
 		coffee_panel.add(C_hazelnut_btn);
 		C_hazelnut_btn.addActionListener(e -> {
-			Request.prodName = Products.getProductNameById(7);
-			Request.powder = "coffee hazelnut powder";
-			step1 = true;
+		    Request.prodName = Products.getProductNameById(7);
+		    Request.powder = "coffee hazelnut powder";
+		    step1 = true;
+		    Size.small = Products.getProductPrice(7);
+		    Size.medium = Products.getProductPrice(8);
+		    Size.large = Products.getProductPrice(9);
+		    Size.main(null);
 		});
-		
+
 		JButton C_machiato_btn = new JButton(Products.getProductNameById(13));
 		C_machiato_btn.setForeground(Color.BLACK);
 		C_machiato_btn.setFont(new Font("Arial", Font.BOLD, 10));
@@ -266,11 +267,15 @@ public class Main extends JFrame {
 		C_machiato_btn.setBounds(161, 175, 150, 45);
 		coffee_panel.add(C_machiato_btn);
 		C_machiato_btn.addActionListener(e -> {
-			Request.prodName = Products.getProductNameById(13);
-			Request.powder = "coffee machiato powder";
-			step1 = true;
+		    Request.prodName = Products.getProductNameById(13);
+		    Request.powder = "coffee machiato powder";
+		    step1 = true;
+		    Size.small = Products.getProductPrice(13);
+		    Size.medium = Products.getProductPrice(14);
+		    Size.large = Products.getProductPrice(15);
+		    Size.main(null);
 		});
-		
+
 		JButton C_americano_btn = new JButton(Products.getProductNameById(4));
 		C_americano_btn.setForeground(Color.BLACK);
 		C_americano_btn.setFont(new Font("Arial", Font.BOLD, 10));
@@ -279,11 +284,15 @@ public class Main extends JFrame {
 		C_americano_btn.setBounds(321, 66, 150, 45);
 		coffee_panel.add(C_americano_btn);
 		C_americano_btn.addActionListener(e -> {
-			Request.prodName = Products.getProductNameById(4);
-			Request.powder = "coffee americano powder";
-			step1 = true;
+		    Request.prodName = Products.getProductNameById(4);
+		    Request.powder = "coffee americano powder";
+		    step1 = true;
+		    Size.small = Products.getProductPrice(4);
+		    Size.medium = Products.getProductPrice(5);
+		    Size.large = Products.getProductPrice(6);
+		    Size.main(null);
 		});
-		
+
 		JButton C_mocha_btn = new JButton(Products.getProductNameById(10));
 		C_mocha_btn.setForeground(Color.BLACK);
 		C_mocha_btn.setFont(new Font("Arial", Font.BOLD, 10));
@@ -292,11 +301,15 @@ public class Main extends JFrame {
 		C_mocha_btn.setBounds(321, 119, 150, 45);
 		coffee_panel.add(C_mocha_btn);
 		C_mocha_btn.addActionListener(e -> {
-			Request.prodName = Products.getProductNameById(10);
-			Request.powder = "coffee mocha powder";
-			step1 = true;
+		    Request.prodName = Products.getProductNameById(10);
+		    Request.powder = "coffee mocha powder";
+		    step1 = true;
+		    Size.small = Products.getProductPrice(10);
+		    Size.medium = Products.getProductPrice(11);
+		    Size.large = Products.getProductPrice(12);
+		    Size.main(null);
 		});
-		
+
 		JButton C_vanilla_btn = new JButton(Products.getProductNameById(16));
 		C_vanilla_btn.setForeground(Color.BLACK);
 		C_vanilla_btn.setFont(new Font("Arial", Font.BOLD, 10));
@@ -305,11 +318,15 @@ public class Main extends JFrame {
 		C_vanilla_btn.setBounds(321, 175, 150, 45);
 		coffee_panel.add(C_vanilla_btn);
 		C_vanilla_btn.addActionListener(e -> {
-			Request.prodName = Products.getProductNameById(16);
-			Request.powder = "coffee vanilla powder";
-			step1 = true;
+		    Request.prodName = Products.getProductNameById(16);
+		    Request.powder = "coffee vanilla powder";
+		    step1 = true;
+		    Size.small = Products.getProductPrice(16);
+		    Size.medium = Products.getProductPrice(17);
+		    Size.large = Products.getProductPrice(18);
+		    Size.main(null);
 		});
-		
+
 		milk_panel.setBounds(440, 24, 601, 344);
 		contentPane.add(milk_panel);
 		milk_panel.setLayout(null);
@@ -336,6 +353,10 @@ public class Main extends JFrame {
 		    Request.prodName = Products.getProductNameById(82);
 		    Request.powder = "milk original powder";
 		    step1 = true;
+		    Size.small = Products.getProductPrice(82);
+		    Size.medium = Products.getProductPrice(83);
+		    Size.large = Products.getProductPrice(84);
+		    Size.main(null);
 		});
 
 		JButton M_hokkaido_btn = new JButton(Products.getProductNameById(88));
@@ -349,6 +370,10 @@ public class Main extends JFrame {
 		    Request.prodName = Products.getProductNameById(88);
 		    Request.powder = "milk hokkaido powder";
 		    step1 = true;
+		    Size.small = Products.getProductPrice(88);
+		    Size.medium = Products.getProductPrice(89);
+		    Size.large = Products.getProductPrice(90);
+		    Size.main(null);
 		});
 
 		JButton M_okinawa_btn = new JButton(Products.getProductNameById(94));
@@ -362,6 +387,10 @@ public class Main extends JFrame {
 		    Request.prodName =Products.getProductNameById(94);
 		    Request.powder = "milk okinawa powder";
 		    step1 = true;
+		    Size.small = Products.getProductPrice(94);
+		    Size.medium = Products.getProductPrice(95);
+		    Size.large = Products.getProductPrice(96);
+		    Size.main(null);
 		});
 
 		JButton M_winM_btn = new JButton(Products.getProductNameById(85));
@@ -375,6 +404,10 @@ public class Main extends JFrame {
 		    Request.prodName = Products.getProductNameById(85);
 		    Request.powder = "milk wintermelon powder";
 		    step1 = true;
+		    Size.small = Products.getProductPrice(85);
+		    Size.medium = Products.getProductPrice(86);
+		    Size.large = Products.getProductPrice(87);
+		    Size.main(null);
 		});
 
 		JButton M_taro_btn = new JButton(Products.getProductNameById(91));
@@ -388,6 +421,10 @@ public class Main extends JFrame {
 		    Request.prodName = Products.getProductNameById(91);
 		    Request.powder = "milk taro powder";
 		    step1 = true;
+		    Size.small = Products.getProductPrice(91);
+		    Size.medium = Products.getProductPrice(92);
+		    Size.large = Products.getProductPrice(93);
+		    Size.main(null);
 		});
 
 		JButton M_ccake_btn = new JButton(Products.getProductNameById(97));
@@ -401,6 +438,10 @@ public class Main extends JFrame {
 		    Request.prodName = Products.getProductNameById(97);
 		    Request.powder = "milk cheesecake powder";
 		    step1 = true;
+		    Size.small = Products.getProductPrice(97);
+		    Size.medium = Products.getProductPrice(98);
+		    Size.large = Products.getProductPrice(99);
+		    Size.main(null);
 		});
 
 		JButton M_choco_btn = new JButton(Products.getProductNameById(100));
@@ -414,6 +455,10 @@ public class Main extends JFrame {
 		    Request.prodName = Products.getProductNameById(100);
 		    Request.powder = "milk chocolate powder";
 		    step1 = true;
+		    Size.small = Products.getProductPrice(100);
+		    Size.medium = Products.getProductPrice(101);
+		    Size.large = Products.getProductPrice(102);
+		    Size.main(null);
 		});
 
 		JButton M_straw_btn = new JButton(Products.getProductNameById(19));
@@ -427,6 +472,10 @@ public class Main extends JFrame {
 		    Request.prodName = Products.getProductNameById(19);
 		    Request.powder = "milk strawberry powder";
 		    step1 = true;
+		    Size.small = Products.getProductPrice(19);
+		    Size.medium = Products.getProductPrice(20);
+		    Size.large = Products.getProductPrice(21);
+		    Size.main(null);
 		});
 
 		JButton M_ccream_btn = new JButton(Products.getProductNameById(103));
@@ -440,8 +489,11 @@ public class Main extends JFrame {
 		    Request.prodName = Products.getProductNameById(103);
 		    Request.powder = "milk cookies n cream powder";
 		    step1 = true;
+		    Size.small = Products.getProductPrice(103);
+		    Size.medium = Products.getProductPrice(104);
+		    Size.large = Products.getProductPrice(105);
+		    Size.main(null);
 		});
-
 		
 		fruit_panel.setBounds(440, 24, 601, 344);
 		contentPane.add(fruit_panel);
@@ -470,6 +522,10 @@ public class Main extends JFrame {
 		    Request.prodName = Products.getProductNameById(79);
 		    Request.powder = "fruit strawberry powder";
 		    step1 = true;
+		    Size.small = Products.getProductPrice(79);
+		    Size.medium = Products.getProductPrice(80);
+		    Size.large = Products.getProductPrice(81);
+		    Size.main(null);
 		});
 
 		JButton F_lychee_btn = new JButton(Products.getProductNameById(52));
@@ -483,6 +539,10 @@ public class Main extends JFrame {
 		    Request.prodName = Products.getProductNameById(52);
 		    Request.powder = "fruit lychee powder";
 		    step1 = true;
+		    Size.small = Products.getProductPrice(52);
+		    Size.medium = Products.getProductPrice(53);
+		    Size.large = Products.getProductPrice(54);
+		    Size.main(null);
 		});
 
 		JButton F_watermelon_btn = new JButton(Products.getProductNameById(58));
@@ -494,8 +554,12 @@ public class Main extends JFrame {
 		fruit_panel.add(F_watermelon_btn);
 		F_watermelon_btn.addActionListener(e -> {
 		    Request.prodName = Products.getProductNameById(58);
-		    Request.powder = "fruit wintermerlon powder";
+		    Request.powder = "fruit wintermelon powder";
 		    step1 = true;
+		    Size.small = Products.getProductPrice(58);
+		    Size.medium = Products.getProductPrice(59);
+		    Size.large = Products.getProductPrice(60);
+		    Size.main(null);
 		});
 
 		JButton F_blue_btn = new JButton(Products.getProductNameById(55));
@@ -509,6 +573,10 @@ public class Main extends JFrame {
 		    Request.prodName = Products.getProductNameById(55);
 		    Request.powder = "fruit blueberry powder";
 		    step1 = true;
+		    Size.small = Products.getProductPrice(55);
+		    Size.medium = Products.getProductPrice(56);
+		    Size.large = Products.getProductPrice(57);
+		    Size.main(null);
 		});
 
 		JButton F_orange_btn = new JButton(Products.getProductNameById(64));
@@ -522,6 +590,10 @@ public class Main extends JFrame {
 		    Request.prodName = Products.getProductNameById(64);
 		    Request.powder = "fruit orange powder";
 		    step1 = true;
+		    Size.small = Products.getProductPrice(64);
+		    Size.medium = Products.getProductPrice(65);
+		    Size.large = Products.getProductPrice(66);
+		    Size.main(null);
 		});
 
 		JButton F_mango_btn = new JButton(Products.getProductNameById(61));
@@ -535,6 +607,10 @@ public class Main extends JFrame {
 		    Request.prodName = "mango fruit tea";
 		    Request.powder = "fruit mango powder";
 		    step1 = true;
+		    Size.small = Products.getProductPrice(61);
+		    Size.medium = Products.getProductPrice(62);
+		    Size.large = Products.getProductPrice(63);
+		    Size.main(null);
 		});
 
 		JButton F_gapple_btn = new JButton(Products.getProductNameById(70));
@@ -548,6 +624,10 @@ public class Main extends JFrame {
 		    Request.prodName = Products.getProductNameById(70);
 		    Request.powder = "fruit green apple powder";
 		    step1 = true;
+		    Size.small = Products.getProductPrice(70);
+		    Size.medium = Products.getProductPrice(71);
+		    Size.large = Products.getProductPrice(72);
+		    Size.main(null);
 		});
 
 		JButton F_grape_btn = new JButton(Products.getProductNameById(67));
@@ -561,6 +641,10 @@ public class Main extends JFrame {
 		    Request.prodName = Products.getProductNameById(67);
 		    Request.powder = "fruit grapes powder";
 		    step1 = true;
+		    Size.small = Products.getProductPrice(67);
+		    Size.medium = Products.getProductPrice(68);
+		    Size.large = Products.getProductPrice(69);
+		    Size.main(null);
 		});
 
 		JButton F_kiwi_btn = new JButton(Products.getProductNameById(76));
@@ -574,6 +658,10 @@ public class Main extends JFrame {
 		    Request.prodName = Products.getProductNameById(76);
 		    Request.powder = "fruit kiwi powder";
 		    step1 = true;
+		    Size.small = Products.getProductPrice(76);
+		    Size.medium = Products.getProductPrice(77);
+		    Size.large = Products.getProductPrice(78);
+		    Size.main(null);
 		});
 
 		JButton F_melon_btn = new JButton(Products.getProductNameById(73));
@@ -587,8 +675,11 @@ public class Main extends JFrame {
 		    Request.prodName = Products.getProductNameById(73);
 		    Request.powder = "fruit melon powder";
 		    step1 = true;
+		    Size.small = Products.getProductPrice(73);
+		    Size.medium = Products.getProductPrice(74);
+		    Size.large = Products.getProductPrice(75);
+		    Size.main(null);
 		});
-
 		
 		frappe_panel.setBounds(440, 24, 601, 344);
 		contentPane.add(frappe_panel);
@@ -617,6 +708,10 @@ public class Main extends JFrame {
 		    Request.prodName = Products.getProductNameById(22);
 		    Request.powder = "frappe c choco java powder";
 		    step1 = true;
+		    Size.small = Products.getProductPrice(22);
+		    Size.medium = Products.getProductPrice(23);
+		    Size.large = Products.getProductPrice(24);
+		    Size.main(null);
 		});
 
 		JButton FP_strawcream_btn = new JButton(Products.getProductNameById(37));
@@ -630,6 +725,10 @@ public class Main extends JFrame {
 		    Request.prodName = Products.getProductNameById(37);
 		    Request.powder = "frappe nc strawberry cream powder";
 		    step1 = true;
+		    Size.small = Products.getProductPrice(37);
+		    Size.medium = Products.getProductPrice(38);
+		    Size.large = Products.getProductPrice(39);
+		    Size.main(null);
 		});
 
 		JButton FP_ccake_btn = new JButton(Products.getProductNameById(40));
@@ -641,8 +740,12 @@ public class Main extends JFrame {
 		frappe_panel.add(FP_ccake_btn);
 		FP_ccake_btn.addActionListener(e -> {
 		    Request.prodName = Products.getProductNameById(40);
-		    Request.powder = "frappe nc cheescake cream powder";
+		    Request.powder = "frappe nc cheesecake cream powder";
 		    step1 = true;
+		    Size.small = Products.getProductPrice(40);
+		    Size.medium = Products.getProductPrice(41);
+		    Size.large = Products.getProductPrice(42);
+		    Size.main(null);
 		});
 
 		JButton FP_chazel_btn = new JButton(Products.getProductNameById(25));
@@ -656,6 +759,10 @@ public class Main extends JFrame {
 		    Request.prodName = Products.getProductNameById(25);
 		    Request.powder = "frappe c choco hazelnut powder";
 		    step1 = true;
+		    Size.small = Products.getProductPrice(25);
+		    Size.medium = Products.getProductPrice(26);
+		    Size.large = Products.getProductPrice(27);
+		    Size.main(null);
 		});
 
 		JButton FP_chococream_btn = new JButton(Products.getProductNameById(43));
@@ -669,6 +776,10 @@ public class Main extends JFrame {
 		    Request.prodName = Products.getProductNameById(43);
 		    Request.powder = "frappe nc chocolate cream powder";
 		    step1 = true;
+		    Size.small = Products.getProductPrice(43);
+		    Size.medium = Products.getProductPrice(44);
+		    Size.large = Products.getProductPrice(45);
+		    Size.main(null);
 		});
 
 		JButton FP_vcream_btn = new JButton(Products.getProductNameById(28));
@@ -682,6 +793,10 @@ public class Main extends JFrame {
 		    Request.prodName = Products.getProductNameById(28);
 		    Request.powder = "frappe c vanilla caramel powder";
 		    step1 = true;
+		    Size.small = Products.getProductPrice(28);
+		    Size.medium = Products.getProductPrice(29);
+		    Size.large = Products.getProductPrice(30);
+		    Size.main(null);
 		});
 
 		JButton FP_scaramel_btn = new JButton(Products.getProductNameById(31));
@@ -695,6 +810,10 @@ public class Main extends JFrame {
 		    Request.prodName = Products.getProductNameById(31);
 		    Request.powder = "frappe c salted caramel powder";
 		    step1 = true;
+		    Size.small = Products.getProductPrice(31);
+		    Size.medium = Products.getProductPrice(32);
+		    Size.large = Products.getProductPrice(33);
+		    Size.main(null);
 		});
 
 		JButton FP_cookiecream_btn = new JButton(Products.getProductNameById(46));
@@ -708,6 +827,10 @@ public class Main extends JFrame {
 		    Request.prodName = Products.getProductNameById(46);
 		    Request.powder = "frappe nc cookies n cream powder";
 		    step1 = true;
+		    Size.small = Products.getProductPrice(46);
+		    Size.medium = Products.getProductPrice(47);
+		    Size.large = Products.getProductPrice(48);
+		    Size.main(null);
 		});
 
 		JButton FP_gtea_btn = new JButton(Products.getProductNameById(34));
@@ -721,6 +844,10 @@ public class Main extends JFrame {
 		    Request.prodName = Products.getProductNameById(34);
 		    Request.powder = "frappe c green tea cream powder";
 		    step1 = true;
+		    Size.small = Products.getProductPrice(34);
+		    Size.medium = Products.getProductPrice(35);
+		    Size.large = Products.getProductPrice(36);
+		    Size.main(null);
 		});
 
 		JButton FP_taro = new JButton(Products.getProductNameById(49));
@@ -734,6 +861,10 @@ public class Main extends JFrame {
 		    Request.prodName = Products.getProductNameById(49);
 		    Request.powder = "frappe nc taro powder";
 		    step1 = true;
+		    Size.small = Products.getProductPrice(49);
+		    Size.medium = Products.getProductPrice(50);
+		    Size.large = Products.getProductPrice(51);
+		    Size.main(null);
 		});
 		
 		JLabel lblNewLabel = new JLabel("COFFEE BASED");
@@ -745,7 +876,7 @@ public class Main extends JFrame {
 		lblNonCoffee.setBounds(370, 57, 75, 14);
 		frappe_panel.add(lblNonCoffee);
 		
-		addon_panel.setBounds(440, 516, 601, 73);
+		addon_panel.setBounds(440, 448, 601, 73);
 		contentPane.add(addon_panel);
 		addon_panel.setLayout(null);
 		
@@ -880,13 +1011,20 @@ public class Main extends JFrame {
 		checkout_btn.setBounds(303, 324, 89, 45);
 		order_panel.add(checkout_btn);
 		checkout_btn.addActionListener(e -> {
-			
-			Request.insertSalesData(orderListModel, totalPrice);
+			if(step1 && step2 && step3 && isCheckout) {
+				Request.insertSalesData(orderListModel, totalPrice);
 
-			orderListModel.clear();
-			Request.updateDB();
-			Request.orderList.clear();
-			total_pricelbl.setText("0");
+				orderListModel.clear();
+				Request.updateDB();
+				Request.orderList.clear();
+				total_pricelbl.setText("0");
+				step1 = false;
+				step2 = false;
+				step3 = false;
+				isCheckout = false;
+			} else {
+				System.out.println("Select a product");
+			}
 		});
 		
 		JLabel lblTotal = new JLabel("TOTAL:");
@@ -909,11 +1047,14 @@ public class Main extends JFrame {
 			orderListModel.clear();
 			Request.orderList.clear();
 			total_pricelbl.setText(0+"");
+			step1 = false;
+			step2 = false;
+			step3 = false;
 		});
 		
 		size_panel.setBorder(new LineBorder(new Color(0, 0, 0)));
 		size_panel.setBackground(new Color(240, 240, 240));
-		size_panel.setBounds(440, 379, 601, 57);
+		size_panel.setBounds(440, 537, 601, 57);
 		contentPane.add(size_panel);
 		size_panel.setLayout(null);
 		
@@ -962,7 +1103,7 @@ public class Main extends JFrame {
 		size_panel.add(large_btn);
 		
 		qty_panel.setBorder(new LineBorder(new Color(0, 0, 0)));
-		qty_panel.setBounds(440, 447, 601, 58);
+		qty_panel.setBounds(440, 379, 601, 58);
 		contentPane.add(qty_panel);
 		qty_panel.setLayout(null);
 		
@@ -986,6 +1127,20 @@ public class Main extends JFrame {
 		valueLabel.setFont(new Font("Arial", Font.BOLD, 17));
 		valueLabel.setBounds(544, 11, 35, 36);
 		qty_panel.add(valueLabel);
+		
+		JButton prodBtn = new JButton("PRODUCTS");
+		prodBtn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ProductTable.main(null);
+				frame.dispose();
+			}
+		});
+		prodBtn.setForeground(Color.BLACK);
+		prodBtn.setFont(new Font("Arial", Font.BOLD, 10));
+		prodBtn.setBorderPainted(false);
+		prodBtn.setBackground(Color.LIGHT_GRAY);
+		prodBtn.setBounds(296, 109, 134, 45);
+		contentPane.add(prodBtn);
 		large_btn.addActionListener(e -> {
 			Request.unit_size = "large";
 			step2 = true;
