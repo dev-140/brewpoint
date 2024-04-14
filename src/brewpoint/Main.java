@@ -55,6 +55,42 @@ public class Main extends JFrame {
 	
 	public static String sizePrice;
 	static Main frame;
+	
+	static JButton C_hazelnut_btn = new JButton(Products.getProductNameById(7));
+	static JButton C_machiato_btn = new JButton(Products.getProductNameById(13));
+	static JButton C_americano_btn = new JButton(Products.getProductNameById(4));
+	static JButton C_mocha_btn = new JButton(Products.getProductNameById(10));
+	static JButton C_vanilla_btn = new JButton(Products.getProductNameById(16));
+	static JButton M_original_btn = new JButton(Products.getProductNameById(82));
+	static JButton M_hokkaido_btn = new JButton(Products.getProductNameById(88));
+	static JButton M_okinawa_btn = new JButton(Products.getProductNameById(94));
+	static JButton M_winM_btn = new JButton(Products.getProductNameById(85));
+	static JButton M_taro_btn = new JButton(Products.getProductNameById(91));
+	static JButton M_ccake_btn = new JButton(Products.getProductNameById(97));
+	static JButton M_choco_btn = new JButton(Products.getProductNameById(100));
+	static JButton M_straw_btn = new JButton(Products.getProductNameById(19));
+	static JButton M_ccream_btn = new JButton(Products.getProductNameById(103));
+	static JButton F_straw_btn = new JButton(Products.getProductNameById(79));
+	static JButton F_lychee_btn = new JButton(Products.getProductNameById(52));
+	static JButton F_watermelon_btn = new JButton(Products.getProductNameById(58));
+	static JButton F_blue_btn = new JButton(Products.getProductNameById(55));
+	static JButton F_orange_btn = new JButton(Products.getProductNameById(64));
+	static JButton F_mango_btn = new JButton(Products.getProductNameById(61));
+	static JButton F_gapple_btn = new JButton(Products.getProductNameById(70));
+	static JButton F_grape_btn = new JButton(Products.getProductNameById(67));
+	static JButton F_kiwi_btn = new JButton(Products.getProductNameById(76));
+	static JButton F_melon_btn = new JButton(Products.getProductNameById(73));
+	static JButton FP_cjava_btn = new JButton(Products.getProductNameById(22));
+	static JButton FP_strawcream_btn = new JButton(Products.getProductNameById(37));
+	static JButton FP_ccake_btn = new JButton(Products.getProductNameById(40));
+	static JButton FP_chazel_btn = new JButton(Products.getProductNameById(25));
+	static JButton FP_chococream_btn = new JButton(Products.getProductNameById(43));
+	static JButton FP_vcream_btn = new JButton(Products.getProductNameById(28));
+	static JButton FP_scaramel_btn = new JButton(Products.getProductNameById(31));
+	static JButton FP_cookiecream_btn = new JButton(Products.getProductNameById(46));
+	static JButton FP_gtea_btn = new JButton(Products.getProductNameById(34));
+	static JButton FP_taro = new JButton(Products.getProductNameById(49));
+	static JButton C_original_btn = new JButton(Products.getProductNameById(1));
 
 	/**
 	 * Launch the application.
@@ -226,7 +262,6 @@ public class Main extends JFrame {
 		// --------------------------------------------------------------------------------------------------------------------------------->
 		// --------------------------------------------------------------------------------------------------------------------------------->
 
-		JButton C_original_btn = new JButton(Products.getProductNameById(1));
 		C_original_btn.setForeground(Color.BLACK);
 		C_original_btn.setFont(new Font("Arial", Font.BOLD, 10));
 		C_original_btn.setBorderPainted(false);
@@ -243,7 +278,6 @@ public class Main extends JFrame {
 			Size.main(null);
 		});
 		
-		JButton C_hazelnut_btn = new JButton(Products.getProductNameById(7));
 		C_hazelnut_btn.setForeground(Color.BLACK);
 		C_hazelnut_btn.setFont(new Font("Arial", Font.BOLD, 10));
 		C_hazelnut_btn.setBorderPainted(false);
@@ -260,7 +294,6 @@ public class Main extends JFrame {
 		    Size.main(null);
 		});
 
-		JButton C_machiato_btn = new JButton(Products.getProductNameById(13));
 		C_machiato_btn.setForeground(Color.BLACK);
 		C_machiato_btn.setFont(new Font("Arial", Font.BOLD, 10));
 		C_machiato_btn.setBorderPainted(false);
@@ -277,7 +310,6 @@ public class Main extends JFrame {
 		    Size.main(null);
 		});
 
-		JButton C_americano_btn = new JButton(Products.getProductNameById(4));
 		C_americano_btn.setForeground(Color.BLACK);
 		C_americano_btn.setFont(new Font("Arial", Font.BOLD, 10));
 		C_americano_btn.setBorderPainted(false);
@@ -294,7 +326,6 @@ public class Main extends JFrame {
 		    Size.main(null);
 		});
 
-		JButton C_mocha_btn = new JButton(Products.getProductNameById(10));
 		C_mocha_btn.setForeground(Color.BLACK);
 		C_mocha_btn.setFont(new Font("Arial", Font.BOLD, 10));
 		C_mocha_btn.setBorderPainted(false);
@@ -311,7 +342,6 @@ public class Main extends JFrame {
 		    Size.main(null);
 		});
 
-		JButton C_vanilla_btn = new JButton(Products.getProductNameById(16));
 		C_vanilla_btn.setForeground(Color.BLACK);
 		C_vanilla_btn.setFont(new Font("Arial", Font.BOLD, 10));
 		C_vanilla_btn.setBorderPainted(false);
@@ -343,7 +373,6 @@ public class Main extends JFrame {
 		// --------- milktea options btn --------------------------------------------------------------------------------------------------->
 		// --------------------------------------------------------------------------------------------------------------------------------->
 		// --------------------------------------------------------------------------------------------------------------------------------->
-		JButton M_original_btn = new JButton(Products.getProductNameById(82));
 		M_original_btn.setForeground(Color.BLACK);
 		M_original_btn.setFont(new Font("Arial", Font.BOLD, 10));
 		M_original_btn.setBorderPainted(false);
@@ -360,7 +389,6 @@ public class Main extends JFrame {
 		    Size.main(null);
 		});
 
-		JButton M_hokkaido_btn = new JButton(Products.getProductNameById(88));
 		M_hokkaido_btn.setForeground(Color.BLACK);
 		M_hokkaido_btn.setFont(new Font("Arial", Font.BOLD, 10));
 		M_hokkaido_btn.setBorderPainted(false);
@@ -377,7 +405,6 @@ public class Main extends JFrame {
 		    Size.main(null);
 		});
 
-		JButton M_okinawa_btn = new JButton(Products.getProductNameById(94));
 		M_okinawa_btn.setForeground(Color.BLACK);
 		M_okinawa_btn.setFont(new Font("Arial", Font.BOLD, 10));
 		M_okinawa_btn.setBorderPainted(false);
@@ -394,7 +421,6 @@ public class Main extends JFrame {
 		    Size.main(null);
 		});
 
-		JButton M_winM_btn = new JButton(Products.getProductNameById(85));
 		M_winM_btn.setForeground(Color.BLACK);
 		M_winM_btn.setFont(new Font("Arial", Font.BOLD, 10));
 		M_winM_btn.setBorderPainted(false);
@@ -411,7 +437,6 @@ public class Main extends JFrame {
 		    Size.main(null);
 		});
 
-		JButton M_taro_btn = new JButton(Products.getProductNameById(91));
 		M_taro_btn.setForeground(Color.BLACK);
 		M_taro_btn.setFont(new Font("Arial", Font.BOLD, 10));
 		M_taro_btn.setBorderPainted(false);
@@ -428,7 +453,6 @@ public class Main extends JFrame {
 		    Size.main(null);
 		});
 
-		JButton M_ccake_btn = new JButton(Products.getProductNameById(97));
 		M_ccake_btn.setForeground(Color.BLACK);
 		M_ccake_btn.setFont(new Font("Arial", Font.BOLD, 10));
 		M_ccake_btn.setBorderPainted(false);
@@ -445,7 +469,6 @@ public class Main extends JFrame {
 		    Size.main(null);
 		});
 
-		JButton M_choco_btn = new JButton(Products.getProductNameById(100));
 		M_choco_btn.setForeground(Color.BLACK);
 		M_choco_btn.setFont(new Font("Arial", Font.BOLD, 10));
 		M_choco_btn.setBorderPainted(false);
@@ -462,7 +485,6 @@ public class Main extends JFrame {
 		    Size.main(null);
 		});
 
-		JButton M_straw_btn = new JButton(Products.getProductNameById(19));
 		M_straw_btn.setForeground(Color.BLACK);
 		M_straw_btn.setFont(new Font("Arial", Font.BOLD, 10));
 		M_straw_btn.setBorderPainted(false);
@@ -479,7 +501,6 @@ public class Main extends JFrame {
 		    Size.main(null);
 		});
 
-		JButton M_ccream_btn = new JButton(Products.getProductNameById(103));
 		M_ccream_btn.setForeground(Color.BLACK);
 		M_ccream_btn.setFont(new Font("Arial", Font.BOLD, 10));
 		M_ccream_btn.setBorderPainted(false);
@@ -512,7 +533,6 @@ public class Main extends JFrame {
 		// --------------------------------------------------------------------------------------------------------------------------------->
 		// --------------------------------------------------------------------------------------------------------------------------------->
 		
-		JButton F_straw_btn = new JButton(Products.getProductNameById(79));
 		F_straw_btn.setForeground(Color.BLACK);
 		F_straw_btn.setFont(new Font("Arial", Font.BOLD, 10));
 		F_straw_btn.setBorderPainted(false);
@@ -529,7 +549,6 @@ public class Main extends JFrame {
 		    Size.main(null);
 		});
 
-		JButton F_lychee_btn = new JButton(Products.getProductNameById(52));
 		F_lychee_btn.setForeground(Color.BLACK);
 		F_lychee_btn.setFont(new Font("Arial", Font.BOLD, 10));
 		F_lychee_btn.setBorderPainted(false);
@@ -546,7 +565,6 @@ public class Main extends JFrame {
 		    Size.main(null);
 		});
 
-		JButton F_watermelon_btn = new JButton(Products.getProductNameById(58));
 		F_watermelon_btn.setForeground(Color.BLACK);
 		F_watermelon_btn.setFont(new Font("Arial", Font.BOLD, 10));
 		F_watermelon_btn.setBorderPainted(false);
@@ -563,7 +581,6 @@ public class Main extends JFrame {
 		    Size.main(null);
 		});
 
-		JButton F_blue_btn = new JButton(Products.getProductNameById(55));
 		F_blue_btn.setForeground(Color.BLACK);
 		F_blue_btn.setFont(new Font("Arial", Font.BOLD, 10));
 		F_blue_btn.setBorderPainted(false);
@@ -580,7 +597,6 @@ public class Main extends JFrame {
 		    Size.main(null);
 		});
 
-		JButton F_orange_btn = new JButton(Products.getProductNameById(64));
 		F_orange_btn.setForeground(Color.BLACK);
 		F_orange_btn.setFont(new Font("Arial", Font.BOLD, 10));
 		F_orange_btn.setBorderPainted(false);
@@ -597,7 +613,6 @@ public class Main extends JFrame {
 		    Size.main(null);
 		});
 
-		JButton F_mango_btn = new JButton(Products.getProductNameById(61));
 		F_mango_btn.setForeground(Color.BLACK);
 		F_mango_btn.setFont(new Font("Arial", Font.BOLD, 10));
 		F_mango_btn.setBorderPainted(false);
@@ -614,7 +629,6 @@ public class Main extends JFrame {
 		    Size.main(null);
 		});
 
-		JButton F_gapple_btn = new JButton(Products.getProductNameById(70));
 		F_gapple_btn.setForeground(Color.BLACK);
 		F_gapple_btn.setFont(new Font("Arial", Font.BOLD, 10));
 		F_gapple_btn.setBorderPainted(false);
@@ -631,7 +645,6 @@ public class Main extends JFrame {
 		    Size.main(null);
 		});
 
-		JButton F_grape_btn = new JButton(Products.getProductNameById(67));
 		F_grape_btn.setForeground(Color.BLACK);
 		F_grape_btn.setFont(new Font("Arial", Font.BOLD, 10));
 		F_grape_btn.setBorderPainted(false);
@@ -648,7 +661,6 @@ public class Main extends JFrame {
 		    Size.main(null);
 		});
 
-		JButton F_kiwi_btn = new JButton(Products.getProductNameById(76));
 		F_kiwi_btn.setForeground(Color.BLACK);
 		F_kiwi_btn.setFont(new Font("Arial", Font.BOLD, 10));
 		F_kiwi_btn.setBorderPainted(false);
@@ -665,7 +677,6 @@ public class Main extends JFrame {
 		    Size.main(null);
 		});
 
-		JButton F_melon_btn = new JButton(Products.getProductNameById(73));
 		F_melon_btn.setForeground(Color.BLACK);
 		F_melon_btn.setFont(new Font("Arial", Font.BOLD, 10));
 		F_melon_btn.setBorderPainted(false);
@@ -698,7 +709,6 @@ public class Main extends JFrame {
 		// --------------------------------------------------------------------------------------------------------------------------------->
 		// --------------------------------------------------------------------------------------------------------------------------------->
 		
-		JButton FP_cjava_btn = new JButton(Products.getProductNameById(22));
 		FP_cjava_btn.setForeground(Color.BLACK);
 		FP_cjava_btn.setFont(new Font("Arial", Font.BOLD, 10));
 		FP_cjava_btn.setBorderPainted(false);
@@ -715,7 +725,6 @@ public class Main extends JFrame {
 		    Size.main(null);
 		});
 
-		JButton FP_strawcream_btn = new JButton(Products.getProductNameById(37));
 		FP_strawcream_btn.setForeground(Color.BLACK);
 		FP_strawcream_btn.setFont(new Font("Arial", Font.BOLD, 10));
 		FP_strawcream_btn.setBorderPainted(false);
@@ -732,7 +741,6 @@ public class Main extends JFrame {
 		    Size.main(null);
 		});
 
-		JButton FP_ccake_btn = new JButton(Products.getProductNameById(40));
 		FP_ccake_btn.setForeground(Color.BLACK);
 		FP_ccake_btn.setFont(new Font("Arial", Font.BOLD, 10));
 		FP_ccake_btn.setBorderPainted(false);
@@ -749,7 +757,6 @@ public class Main extends JFrame {
 		    Size.main(null);
 		});
 
-		JButton FP_chazel_btn = new JButton(Products.getProductNameById(25));
 		FP_chazel_btn.setForeground(Color.BLACK);
 		FP_chazel_btn.setFont(new Font("Arial", Font.BOLD, 10));
 		FP_chazel_btn.setBorderPainted(false);
@@ -766,7 +773,6 @@ public class Main extends JFrame {
 		    Size.main(null);
 		});
 
-		JButton FP_chococream_btn = new JButton(Products.getProductNameById(43));
 		FP_chococream_btn.setForeground(Color.BLACK);
 		FP_chococream_btn.setFont(new Font("Arial", Font.BOLD, 10));
 		FP_chococream_btn.setBorderPainted(false);
@@ -783,7 +789,6 @@ public class Main extends JFrame {
 		    Size.main(null);
 		});
 
-		JButton FP_vcream_btn = new JButton(Products.getProductNameById(28));
 		FP_vcream_btn.setForeground(Color.BLACK);
 		FP_vcream_btn.setFont(new Font("Arial", Font.BOLD, 10));
 		FP_vcream_btn.setBorderPainted(false);
@@ -800,7 +805,6 @@ public class Main extends JFrame {
 		    Size.main(null);
 		});
 
-		JButton FP_scaramel_btn = new JButton(Products.getProductNameById(31));
 		FP_scaramel_btn.setForeground(Color.BLACK);
 		FP_scaramel_btn.setFont(new Font("Arial", Font.BOLD, 10));
 		FP_scaramel_btn.setBorderPainted(false);
@@ -817,7 +821,6 @@ public class Main extends JFrame {
 		    Size.main(null);
 		});
 
-		JButton FP_cookiecream_btn = new JButton(Products.getProductNameById(46));
 		FP_cookiecream_btn.setForeground(Color.BLACK);
 		FP_cookiecream_btn.setFont(new Font("Arial", Font.BOLD, 10));
 		FP_cookiecream_btn.setBorderPainted(false);
@@ -834,7 +837,6 @@ public class Main extends JFrame {
 		    Size.main(null);
 		});
 
-		JButton FP_gtea_btn = new JButton(Products.getProductNameById(34));
 		FP_gtea_btn.setForeground(Color.BLACK);
 		FP_gtea_btn.setFont(new Font("Arial", Font.BOLD, 10));
 		FP_gtea_btn.setBorderPainted(false);
@@ -851,7 +853,6 @@ public class Main extends JFrame {
 		    Size.main(null);
 		});
 
-		JButton FP_taro = new JButton(Products.getProductNameById(49));
 		FP_taro.setForeground(Color.BLACK);
 		FP_taro.setFont(new Font("Arial", Font.BOLD, 10));
 		FP_taro.setBorderPainted(false);
@@ -1163,6 +1164,43 @@ public class Main extends JFrame {
                 valueLabel.setText(String.valueOf(value));
             }
         });
-		
+	}
+
+	public static void setText() {
+		C_hazelnut_btn.setText(Products.getProductNameById(7));
+		 C_machiato_btn.setText(Products.getProductNameById(13));
+		 C_americano_btn.setText(Products.getProductNameById(4));
+		 C_mocha_btn.setText(Products.getProductNameById(10));
+		 C_vanilla_btn.setText(Products.getProductNameById(16));
+		 M_original_btn.setText(Products.getProductNameById(82));
+		 M_hokkaido_btn.setText(Products.getProductNameById(88));
+		 M_okinawa_btn.setText(Products.getProductNameById(94));
+		 M_winM_btn.setText(Products.getProductNameById(85));
+		 M_taro_btn.setText(Products.getProductNameById(91));
+		 M_ccake_btn.setText(Products.getProductNameById(97));
+		 M_choco_btn.setText(Products.getProductNameById(100));
+		 M_straw_btn.setText(Products.getProductNameById(19));
+		 M_ccream_btn.setText(Products.getProductNameById(103));
+		 F_straw_btn.setText(Products.getProductNameById(79));
+		 F_lychee_btn.setText(Products.getProductNameById(52));
+		 F_watermelon_btn.setText(Products.getProductNameById(58));
+		 F_blue_btn.setText(Products.getProductNameById(55));
+		 F_orange_btn.setText(Products.getProductNameById(64));
+		 F_mango_btn.setText(Products.getProductNameById(61));
+		 F_gapple_btn.setText(Products.getProductNameById(70));
+		 F_grape_btn.setText(Products.getProductNameById(67));
+		 F_kiwi_btn.setText(Products.getProductNameById(76));
+		 F_melon_btn.setText(Products.getProductNameById(73));
+		 FP_cjava_btn.setText(Products.getProductNameById(22));
+		 FP_strawcream_btn.setText(Products.getProductNameById(37));
+		 FP_ccake_btn.setText(Products.getProductNameById(40));
+		 FP_chazel_btn.setText(Products.getProductNameById(25));
+		 FP_chococream_btn.setText(Products.getProductNameById(43));
+		 FP_vcream_btn.setText(Products.getProductNameById(28));
+		 FP_scaramel_btn.setText(Products.getProductNameById(31));
+		 FP_cookiecream_btn.setText(Products.getProductNameById(46));
+		 FP_gtea_btn.setText(Products.getProductNameById(34));
+		 FP_taro.setText(Products.getProductNameById(49));
+         C_original_btn.setText(Products.getProductNameById(1));
 	}
 }

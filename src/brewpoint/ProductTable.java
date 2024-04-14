@@ -78,10 +78,12 @@ public class ProductTable extends JFrame {
         });
         contentPane.add(updateButton);
         
-        backBtn = new JButton("Restart");
+        backBtn = new JButton("Back to main menu");
         backBtn.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
-        		System.exit(0);
+    			Main.setText();
+    			Main.main(null);
+    			frame.dispose();
         	}
         });
         backBtn.setBackground(Color.LIGHT_GRAY);
