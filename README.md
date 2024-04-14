@@ -11,7 +11,7 @@ This project is a POS and Invetory system for 8am coffee shop.
 - Users can automatically update inventory using this system.
 - The system is easy to use and user-friendly.
 
-![Logo](https://ibb.co/2dZR402)
+![Logo](https://i.ibb.co/sqWcYpS/logo.png)
 
 ## Author
 
