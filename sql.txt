@@ -130,6 +130,36 @@ INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) 
 SELECT * FROM dual;
 
 INSERT ALL
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (52, 'fruit tea', 'lychee', 'small', 29)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (53, 'fruit tea', 'lychee', 'medium', 39)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (54, 'fruit tea', 'lychee', 'large', 49)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (55, 'fruit tea', 'blueberry', 'small', 29)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (56, 'fruit tea', 'blueberry', 'medium', 39)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (57, 'fruit tea', 'blueberry', 'large', 49)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (58, 'fruit tea', 'watermelon', 'small', 29)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (59, 'fruit tea', 'watermelon', 'medium', 39)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (60, 'fruit tea', 'watermelon', 'large', 49)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (61, 'fruit tea', 'mango', 'small', 29)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (62, 'fruit tea', 'mango', 'medium', 39)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (63, 'fruit tea', 'mango', 'large', 49)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (64, 'fruit tea', 'orange', 'small', 29)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (65, 'fruit tea', 'orange', 'medium', 39)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (66, 'fruit tea', 'orange', 'large', 49)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (67, 'fruit tea', 'grapes', 'small', 29)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (68, 'fruit tea', 'grapes', 'medium', 39)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (69, 'fruit tea', 'grapes', 'large', 49)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (70, 'fruit tea', 'green apple', 'small', 29)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (71, 'fruit tea', 'green apple', 'medium', 39)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (72, 'fruit tea', 'green apple', 'large', 49)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (73, 'fruit tea', 'melon', 'small', 29)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (74, 'fruit tea', 'melon', 'medium', 39)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (75, 'fruit tea', 'melon', 'large', 49)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (76, 'fruit tea', 'kiwi', 'small', 29)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (77, 'fruit tea', 'kiwi', 'medium', 39)
+INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (78, 'fruit tea', 'kiwi', 'large', 49)
+SELECT 1 FROM DUAL;
+
+INSERT ALL
 INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (82, 'milk tea', 'original milktea', 'small', 29)
 INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (83, 'milk tea', 'original milktea', 'medium', 39)
 INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (84, 'milk tea', 'original milktea', 'large', 49)
@@ -263,41 +293,17 @@ INTO inventory (item_id, item_name, quantity) VALUES (42, 'frappe nc cookies n c
 INTO inventory (item_id, item_name, quantity) VALUES (43, 'frappe nc taro  powder', 100)
 SELECT 1 FROM DUAL;
 
-INSERT ALL
-INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (52, 'fruit tea', 'lychee', 'small', 29)
-INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (53, 'fruit tea', 'lychee', 'medium', 39)
-INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (54, 'fruit tea', 'lychee', 'large', 49)
-INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (55, 'fruit tea', 'blueberry', 'small', 29)
-INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (56, 'fruit tea', 'blueberry', 'medium', 39)
-INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (57, 'fruit tea', 'blueberry', 'large', 49)
-INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (58, 'fruit tea', 'watermelon', 'small', 29)
-INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (59, 'fruit tea', 'watermelon', 'medium', 39)
-INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (60, 'fruit tea', 'watermelon', 'large', 49)
-INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (61, 'fruit tea', 'mango', 'small', 29)
-INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (62, 'fruit tea', 'mango', 'medium', 39)
-INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (63, 'fruit tea', 'mango', 'large', 49)
-INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (64, 'fruit tea', 'orange', 'small', 29)
-INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (65, 'fruit tea', 'orange', 'medium', 39)
-INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (66, 'fruit tea', 'orange', 'large', 49)
-INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (67, 'fruit tea', 'grapes', 'small', 29)
-INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (68, 'fruit tea', 'grapes', 'medium', 39)
-INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (69, 'fruit tea', 'grapes', 'large', 49)
-INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (70, 'fruit tea', 'green apple', 'small', 29)
-INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (71, 'fruit tea', 'green apple', 'medium', 39)
-INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (72, 'fruit tea', 'green apple', 'large', 49)
-INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (73, 'fruit tea', 'melon', 'small', 29)
-INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (74, 'fruit tea', 'melon', 'medium', 39)
-INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (75, 'fruit tea', 'melon', 'large', 49)
-INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (76, 'fruit tea', 'kiwi', 'small', 29)
-INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (77, 'fruit tea', 'kiwi', 'medium', 39)
-INTO Product (Product_id, Product_type, Product_name, Product_size, Unit_price) VALUES (78, 'fruit tea', 'kiwi', 'large', 49)
-SELECT 1 FROM DUAL;
 
+<<<<<<< HEAD
 INSERT INTO SALES_TABLE (item, total_price, "date", total_sales)    
+=======
+For sales table
+INSERT INTO SALES_TABLE (item, total_price, "date", total_sales)
+>>>>>>> 0a8d27befff6bbc343198cb9d53dd0fb9ddc4efb
 VALUES ('None', 0.0, SYSDATE, 0.0);
 
 
-
+---------------------------------------------------------------
 DELETE FROM SALES_TABLE WHERE ITEM = 'item_name';
 
 select * from inventory;
@@ -309,3 +315,11 @@ if error delete
 %APPDATA%\SQL Developer\system23.1.1.345.2114\system_cache
 
 note: don't forget to commit sql
+
+CREATE TABLE sales_table (
+    sale_id INT PRIMARY KEY,
+    item VARCHAR(100),
+    total_price DECIMAL(10, 2),
+    "date" DATE,
+    total_sales DECIMAL(10, 2)
+);
