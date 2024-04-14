@@ -323,5 +323,3 @@ CREATE TABLE sales_table (
 
 INSERT INTO inventory (ITEM_ID, ITEM_NAME, QUANTITY)
 VALUES (43, 'no addons', 999999);
-
-kurt adodoli
