@@ -14,9 +14,6 @@ import java.awt.Font;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.util.List;
 import java.awt.event.ActionEvent;
 import javax.swing.border.LineBorder;
 import javax.swing.event.ChangeEvent;
@@ -31,6 +28,8 @@ import javax.swing.JSlider;
 
 
 public class Main extends JFrame {
+	private static final long serialVersionUID = 1L;
+	static Main frame;
 	// panels
 	static JPanel coffee_panel = new JPanel();
 	static JPanel milk_panel = new JPanel();
@@ -47,15 +46,13 @@ public class Main extends JFrame {
 	static JSlider slider = new JSlider();
 	static JPanel qty_panel = new JPanel();
 	static JLabel total_pricelbl = new JLabel("0");
-	JList<String> orderList = new JList<>(orderListModel);
 	
-	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	public static double totalPrice;
-	
 	public static String sizePrice;
-	static Main frame;
+	JList<String> orderList = new JList<>(orderListModel);
 	
+	// products button
 	static JButton C_hazelnut_btn = new JButton(Products.getProductNameById(7));
 	static JButton C_machiato_btn = new JButton(Products.getProductNameById(13));
 	static JButton C_americano_btn = new JButton(Products.getProductNameById(4));
@@ -92,6 +89,12 @@ public class Main extends JFrame {
 	static JButton FP_taro = new JButton(Products.getProductNameById(49));
 	static JButton C_original_btn = new JButton(Products.getProductNameById(1));
 
+	// addons button
+	static JButton AD_pearl = new JButton("PEARL");
+	static JButton AD_oreo = new JButton("OREO");
+	static JButton AD_nata = new JButton("NATA");
+	static JButton AD_cjelly = new JButton("COFFEE JELLY");
+	static JButton AD_fjelly = new JButton("FRUIT JELLY");
 	/**
 	 * Launch the application.
 	 */
@@ -888,7 +891,6 @@ public class Main extends JFrame {
 		// --------------------------------------------------------------------------------------------------------------------------------->
 		// --------------------------------------------------------------------------------------------------------------------------------->
 		
-		JButton AD_pearl = new JButton("PEARL");
 		AD_pearl.setForeground(Color.BLACK);
 		AD_pearl.setFont(new Font("Arial", Font.BOLD, 10));
 		AD_pearl.setBorderPainted(false);
@@ -902,7 +904,6 @@ public class Main extends JFrame {
 		    Request.addItem();
 		});
 		
-		JButton AD_oreo = new JButton("OREO");
 		AD_oreo.setForeground(Color.BLACK);
 		AD_oreo.setFont(new Font("Arial", Font.BOLD, 10));
 		AD_oreo.setBorderPainted(false);
@@ -916,7 +917,6 @@ public class Main extends JFrame {
 		    Request.addItem();
 		});
 		
-		JButton AD_nata = new JButton("NATA");
 		AD_nata.setForeground(Color.BLACK);
 		AD_nata.setFont(new Font("Arial", Font.BOLD, 10));
 		AD_nata.setBorderPainted(false);
@@ -930,7 +930,6 @@ public class Main extends JFrame {
 		    Request.addItem();
 		});
 		
-		JButton AD_cjelly = new JButton("COFFEE JELLY");
 		AD_cjelly.setForeground(Color.BLACK);
 		AD_cjelly.setFont(new Font("Arial", Font.BOLD, 10));
 		AD_cjelly.setBorderPainted(false);
@@ -944,7 +943,6 @@ public class Main extends JFrame {
 		    Request.addItem();
 		});
 		
-		JButton AD_fjelly = new JButton("FRUIT JELLY");
 		AD_fjelly.setForeground(Color.BLACK);
 		AD_fjelly.setFont(new Font("Arial", Font.BOLD, 10));
 		AD_fjelly.setBorderPainted(false);

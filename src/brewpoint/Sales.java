@@ -46,14 +46,12 @@ public class Sales extends JFrame {
         setContentPane(contentPane);
         contentPane.setLayout(null);
 
-        // Create the table model with column names
         DefaultTableModel model = new DefaultTableModel();
         model.addColumn("Item");
         model.addColumn("Total Price");
         model.addColumn("Date");
         model.addColumn("Total Sales");
 
-        // Populate data into the table model
         try (Connection con = DBUtil.getDBConnection();
              PreparedStatement stmt = con.prepareStatement("SELECT * FROM SALES_TABLE");
              ResultSet rs = stmt.executeQuery()) {
@@ -68,17 +66,13 @@ public class Sales extends JFrame {
             e.printStackTrace();
         }
 
-        // Create the table with the table model
         table = new JTable(model);
         table.setBounds(10, 11, 564, 339);
-
-        // Hide Total Sales column by setting its column width to 0
         table.getColumnModel().getColumn(3).setMaxWidth(0);
         table.getColumnModel().getColumn(3).setMinWidth(0);
         table.getColumnModel().getColumn(3).setPreferredWidth(0);
         table.getColumnModel().getColumn(3).setWidth(0);
 
-        // Create a scroll pane and add the table to it
         JScrollPane scrollPane = new JScrollPane(table);
         scrollPane.setBounds(10, 11, 964, 402);
         contentPane.add(scrollPane);
@@ -93,7 +87,6 @@ public class Sales extends JFrame {
         total_salesLBL.setBounds(498, 424, 216, 38);
         contentPane.add(total_salesLBL);
 
-        // Set the text for the total sales label
         double totalSales = calculateTotalSales(model);
         total_salesLBL.setText(String.valueOf(totalSales));
     }

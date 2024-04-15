@@ -4,12 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
-
 import javax.swing.DefaultListModel;
-import javax.swing.JList;
 import javax.swing.JOptionPane;
 
 public class Request {
@@ -222,7 +218,6 @@ public class Request {
                 if (rs.next()) {
                     int currentQuantity = rs.getInt("quantity");
                     
-                    // Calculate new quantity after subtracting ordered quantity
                     int newQuantity = currentQuantity - quantity;
                     if (newQuantity < 0) {
                         System.out.println("Error: Item not found in inventory. " + itemName);
@@ -305,7 +300,6 @@ public class Request {
 	        }
 	        String itemNames = itemNamesBuilder.toString();
 
-	        // SQL query to insert sales data
 	        String insertQuery = "INSERT INTO SALES_TABLE (item, total_price, \"date\", total_sales) VALUES (?, ?, SYSDATE, ?)";
 
 	        try (PreparedStatement stmt = con.prepareStatement(insertQuery)) {

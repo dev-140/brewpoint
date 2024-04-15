@@ -46,29 +46,23 @@ public class ProductTable extends JFrame {
         setContentPane(contentPane);
         contentPane.setLayout(null);
 
-        // Define column names
         String[] columnNames = {"Product ID", "Product Type", "Product Name", "Product Size", "Unit Price"};
 
-        // Fetch product data from Oracle database
         Object[][] data = fetchProductData();
 
-        // Create the table model
         DefaultTableModel model = new DefaultTableModel(data, columnNames) {
             @Override
             public boolean isCellEditable(int row, int column) {
-                return column == 2 || column == 4; // Allow editing of Product Name and Unit Price columns
+                return column == 2 || column == 4;
             }
         };
 
-        // Create the table
         table = new JTable(model);
 
-        // Add the table to a scroll pane
         JScrollPane scrollPane = new JScrollPane(table);
         scrollPane.setBounds(10, 11, 1164, 499);
         contentPane.add(scrollPane);
 
-        // Add button to update the database
         JButton updateButton = new JButton("Update Database");
         updateButton.setBackground(new Color(192, 192, 192));
         updateButton.setBounds(10, 521, 150, 30);
@@ -98,17 +92,14 @@ public class ProductTable extends JFrame {
              Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
              ResultSet rs = stmt.executeQuery("SELECT * FROM PRODUCT")) {
 
-            // Get ResultSet metadata
             int columns = rs.getMetaData().getColumnCount();
 
-            // Get row count
             rs.last();
             int rows = rs.getRow();
             rs.beforeFirst();
 
             data = new Object[rows][columns];
 
-            // Populate data array
             int i = 0;
             while (rs.next()) {
                 for (int j = 0; j < columns; j++) {
